@@ -20,6 +20,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         server-dir: /AppEcho/  # AppEchoフォルダ内にアップロードする
-        local-dir: |
-          ./src/
-          ./index.php
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          .github/
+          .DS_Store
+          .gitignore
+          README.md
