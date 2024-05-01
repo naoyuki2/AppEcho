@@ -15,7 +15,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ${{ secrets.SERVER }}
+        server: ${{ secrets.SERVERNAME }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
 				server-dir: /AppEcho  #AppEchoフォルダ内にアップロードする
