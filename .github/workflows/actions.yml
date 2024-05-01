@@ -1,8 +1,9 @@
 on:
   pull_request:
-    types: [closed] #プルリクエストが閉じられたときに実行
+    types: [closed] # プルリクエストが閉じられたときに実行
     branches:
       - main
+
 name: 🚀 Deploy website on PR closed
 jobs:
   web-deploy:
@@ -18,4 +19,7 @@ jobs:
         server: ${{ secrets.SERVERNAME }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        server-dir: /AppEcho  #AppEchoフォルダ内にアップロードする
+        server-dir: /AppEcho  # AppEchoフォルダ内にアップロードする
+        local-dir: |
+          src
+          index.php
