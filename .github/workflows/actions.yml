@@ -18,4 +18,4 @@ jobs:
         server: ${{ secrets.SERVERNAME }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-				server-dir: /AppEcho  #AppEchoフォルダ内にアップロードする
+        server-dir: /AppEcho  #AppEchoフォルダ内にアップロードする
