@@ -1,0 +1,25 @@
+on:
+  pull_request:
+    types: [closed] # プルリクエストが閉じられたときに実行
+    branches:
+      - main
+
+name: 🚀 Deploy website on PR closed
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.SERVERNAME }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        server-dir: /AppEcho  # AppEchoフォルダ内にアップロードする
+        local-dir: |
+          src
+          index.php
