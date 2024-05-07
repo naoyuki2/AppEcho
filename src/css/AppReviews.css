@@ -20,14 +20,14 @@ body{
 }
 
 .AppReviews-tag{
-    color: aqua;
+    color: #1c90ed;
     float: right;
     padding-left: 10px;
     padding-right: 10px;
-    border-bottom: solid 1px aqua;
-    border-top: solid 1px aqua;
-    border-left: solid 1px aqua;
-    border-right: solid 1px aqua;
+    border-bottom: solid 1px #1c90ed;
+    border-top: solid 1px #1c90ed;
+    border-left: solid 1px #1c90ed;
+    border-right: solid 1px #1c90ed;
     border-radius: 20px;
     font-size: small;
 }
