@@ -7,7 +7,7 @@
         <span class="AppReviews-number">No.<?php echo $i ?></span>
         <span class="AppReviews-point"><i class="fa-solid fa-star" style="color: #FFD43B;">☆</i>5</span>
         <span class="AppReviews-tag">感想</span>
-        <div class="AppReviews-comment">内容</div>
+        <p class="AppReviews-comment">内容</p>
         <div class="AppReviews-date">2024/05/01</div>
     </div>
 <?php } ?>
