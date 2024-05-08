@@ -1,7 +1,7 @@
 <?php
 require_once '../components/Header.php';
 require_once '../features/AppDetail/getAppDetail.php';
-$AppList = getAppList();
+$AppList = getAppDetail();
 ?>
 
 <?php

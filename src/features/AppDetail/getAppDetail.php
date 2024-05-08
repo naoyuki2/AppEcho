@@ -1,7 +1,7 @@
 <?php
 require_once '/home/users/2/verse.jp-aso2201030/web/AppEcho/config/db_connect.php';
 
-function getAppList()
+function getAppDetail()
 {
     global $pdo;
     $sql = $pdo->query('
