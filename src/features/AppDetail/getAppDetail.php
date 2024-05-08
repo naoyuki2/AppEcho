@@ -9,7 +9,7 @@ function getAppList()
             FROM app
             INNER JOIN category
             ON app.category_id = category.id
-            INNER JOIN review
+            LEFT JOIN review
             ON app.id = review.app_id
             WHERE app.id = 1
         ');
