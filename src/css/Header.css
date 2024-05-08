@@ -1,0 +1,19 @@
+body{
+    height: 68px;
+    background-color: #3EA632;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.Header-logo{
+    text-align: center;
+}
+
+.Header-search{
+    text-align: left;
+}
