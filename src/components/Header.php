@@ -12,7 +12,7 @@
     <body>
 
         <div class="Header-logo">
-            <img src="ロゴ 1.png">
+            <img src="logo.png">
         </div>
 
         <div class="Header-search">
