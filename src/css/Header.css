@@ -1,19 +1,19 @@
-body{
+header {
     height: 68px;
     background-color: #3EA632;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     position: fixed;
     top: 0;
     left: 0;
 }
 
 .Header-logo{
-    text-align: center;
+    margin:auto;
 }
 
 .Header-search{
-    text-align: left;
+    margin:auto;
 }

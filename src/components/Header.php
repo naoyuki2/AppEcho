@@ -11,13 +11,12 @@
         <link rel="stylesheet" href="../css/Header.css">
     </head>
     <body> 
-        <div class="Header-logo">
-            <img src="../../img/logo.png">
-        </div>
+        <header>
+            <div class="Header-logo">
+                <img src="../../img/logo.png">
+            </div>
 
-        <div class="Header-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-
-    </body>
-</html>
+            <div class="Header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </header>
