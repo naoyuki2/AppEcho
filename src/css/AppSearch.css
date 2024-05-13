@@ -5,8 +5,8 @@
 }
 
 .btn-outline-primary, .btn-check+.btn:hover {
-    color: #3EA632;
-    border-color: #3EA632;
+    color: #4b4b4b;
+    border-color: #4b4b4b;
     border-radius: 20px;
     padding: .3rem .8rem;
     font-size: .8rem;
@@ -68,8 +68,8 @@
 }
 
 .form-select {
-    color: #3EA632;
-    border-color: #3EA632;
+    color: #4b4b4b;
+    border-color: #4b4b4b;
     border-radius: 20px;
     padding: .3rem 1rem;
     padding-right: 3rem;
