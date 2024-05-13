@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+.AppSearch-wrap {
+    margin: .5rem;
+}
+
+.btn-outline-primary, .btn-check+.btn:hover {
+    color: #4b4b4b;
+    border-color: #4b4b4b;
+    border-radius: 20px;
+    padding: .3rem .8rem;
+    font-size: .8rem;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active, .btn:hover {
+    background-color: #3EA632;
+    border-color: #3EA632;
+    color: #fff;
+}
+
+.fa-star {
+    margin-right: .2rem;
+}
+
+.AppSearch-subTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-left: .2rem solid #3EA632;
+    padding-left: .3rem;
+    margin: .5rem 0;
+}
+
+.AppSearch-text {
+    font-size: .8rem;
+    display: flex;
+    margin: 0 auto;
+}
+
+.AppSearch-content {
+    margin-bottom: 1.5rem;
+}
+
+.AppSearch-category, .AppSearch-star {
+    margin:.3rem .1rem;
+}
+
+.AppSearch-input {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn-outline-success {
+    color: #E37141;
+    border-color: #E37141;
+    border-radius: 20px;
+    padding: .3rem 1.5rem;
+}
+
+.btn-outline-success:hover {
+    background-color: #E37141;
+    border-color: #E37141;
+}
+
+.AppSearch-submit {
+    display: flex;
+    margin: 4rem auto;
+}
+
+.form-select {
+    color: #4b4b4b;
+    border-color: #4b4b4b;
+    border-radius: 20px;
+    padding: .3rem 1rem;
+    padding-right: 3rem;
+    font-size: .8rem;
+    width: fit-content;
+}
+
+.AppSearch-cautionary {
+    display: flex;
+}
+
+.AppSearch-span {
+    font-size: .8rem;
+    height: fit-content;
+    margin: auto 1rem;
+    margin-bottom: .6rem;
+}

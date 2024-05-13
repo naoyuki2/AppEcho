@@ -9,5 +9,16 @@
         <link rel="stylesheet" href="../css/AppList.css">
         <link rel="stylesheet" href="../css/AppReviews.css">
         <link rel="stylesheet" href="../css/AppDetail.css">
-    </head>
-    <body>
+        <link rel="stylesheet" href="../css/Header.css">
+        <link rel="stylesheet" href="../css/AppSearch.css">
+    </head>    <body> 
+
+        <header>
+            <div class="Header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="Header-logo">
+                <img src="../../img/logo.png">
+            </div>
+            <div></div>
+        </header>
