@@ -21,7 +21,7 @@ require_once '../components/Header.php';
             <b><p class="AppDetail-midasi">アプリ名</p></b>
         </div>
         <div align="center">
-            <p>appname</p>
+            <p>x</p>
         </div>
 
         <div align="left">
