@@ -1,0 +1,49 @@
+.AppDetail-midasi{
+    border-left:5px solid #3ea632;
+    padding:2px 8px;
+}
+
+.AppDetail-main{
+    color: #4b4b4b;
+    background-color: #fafafa;
+}
+
+.AppDetail-pad{
+    padding: 24px;
+}
+
+.AppDetail-ex{
+    width: 200px;
+    height: 200px;
+    border: 1px #e37141 solid;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.AppDetail-foot{
+    padding-top: 40px;
+}
+
+.AppDetail-com{
+    padding-left: 10px;
+    margin: 0px;
+}
+
+.AppDetail-categori{
+    border-radius: 25px;
+    background-color: #fafafa;
+    border:2px solid #4b4b4b;
+    color: #4b4b4b;
+}
+
+.AppDetail-fl-left{
+    float: left;
+}
+
+.AppDetail-fl-right{
+    float: right;
+}
+
+.AppDetail-pad-botm{
+    padding-top: 32px;
+}
