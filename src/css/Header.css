@@ -3,17 +3,19 @@ header {
     background-color: #3EA632;
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Header-logo{
-    margin:auto;
 }
 
 .Header-search{
-    margin:auto;
+    color: #FAFAFA;
+    font-size: 2.5rem;
 }
