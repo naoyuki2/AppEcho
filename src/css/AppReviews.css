@@ -17,18 +17,17 @@ body{
 .AppReviews-point{
     float: right;
     font-size: small;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .AppReviews-tag{
-    color: #1c90ed;
     float: right;
     padding-left: 10px;
     padding-right: 10px;
-    border-bottom: solid 1px #1c90ed;
-    border-top: solid 1px #1c90ed;
-    border-left: solid 1px #1c90ed;
-    border-right: solid 1px #1c90ed;
     border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
     font-size: small;
 }
 
