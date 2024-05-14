@@ -13,11 +13,16 @@
     </head>
     <body> 
         <header>
+
             <div class="Header-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
+
             <div class="Header-logo">
-                <img src="../../img/logo.png">
+                <a href="AppList.php"><img src="../../img/logo.png"></a>
             </div>
-            <div></div>
+
+            <div>
+            </div>
+
         </header>
