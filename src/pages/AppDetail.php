@@ -68,9 +68,7 @@ foreach ($AppDetail as $detail) {
                     }
                 } else {
                     ?>
-                    <div align="center">
-                        <p>まだ評価されていません</p>
-                    </div>
+                    <p>まだ評価されていません</p>
                 <?php
                 }
                 ?>
