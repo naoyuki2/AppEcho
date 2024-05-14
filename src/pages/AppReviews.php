@@ -1,7 +1,7 @@
 <?php
     require_once '../components/Header.php';
     require_once '../features/AppList/getReviews.php';
-    $Reviews = getReviews();
+    $Reviews = getReviews(1);
 
 ?>
 
