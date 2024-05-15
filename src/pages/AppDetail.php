@@ -1,9 +1,7 @@
 <?php
 require_once '../components/Header.php';
 require_once '../features/AppDetail/getAppDetail.php';
-
-// $appId = $_GET['appId'];
-$AppDetail = getAppDetail(1);   // 仮ID
+$AppDetail = getAppDetail($_GET['id']);
 ?>
 
 <?php
