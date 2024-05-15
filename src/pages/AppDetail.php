@@ -77,13 +77,15 @@ foreach ($AppDetail as $detail) {
             <div class="AppDetail-foot">
                 <div class="AppDetail-fl-left">
                     <p class="AppDetail-com"><?php echo $detail['review'] ?></p>
-                    <a href="../pages/AppReviews.php?appId=<?php echo 1 ?>" class="AppDetail-Link-Review">
+                    <a href="../pages/AppReviews.php?appId=<?php echo 1 ?>" class="AppDetail-a">
                         <i class="fa-regular fa-comment fa-2x" style="color: #4b4b4b;"></i>
                     </a>
                 </div>
                 <div class="AppDetail-fl-right">
                     <div class="AppDetail-pad-botm">
-                        <button class="AppDetail-categori"><?php echo $detail['category_name'] ?></button>
+                        <a href="../pages/AppList.php" class="AppDetail-a">
+                            <p class="AppDetail-categori"><?php echo $detail['category_name'] ?></p>
+                        </a>
                     </div>
                 </div>
             </div>
