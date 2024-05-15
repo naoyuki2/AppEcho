@@ -59,7 +59,7 @@
     justify-content: space-around;
 }
 
-.AppDetail-Link-Review {
+.AppDetail-a {
     display: block;
     height: auto;
     text-decoration: none;
