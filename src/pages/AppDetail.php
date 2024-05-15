@@ -1,7 +1,9 @@
 <?php
 require_once '../components/Header.php';
 require_once '../features/AppDetail/getAppDetail.php';
-$AppDetail = getAppDetail($_GET['appId']);
+
+$appId = $_GET['appId'];
+$AppDetail = getAppDetail($appId);
 ?>
 
 <?php
@@ -75,7 +77,7 @@ foreach ($AppDetail as $detail) {
             <div class="AppDetail-foot">
                 <div class="AppDetail-fl-left">
                     <p class="AppDetail-com"><?php echo $detail['review'] ?></p>
-                    <a href="../pages/AppReviews.php?appId=<?php echo 1 ?>" class="AppDetail-a">
+                    <a href="../pages/AppReviews.php?appId=<?php echo $appId ?>" class="AppDetail-a">
                         <i class="fa-regular fa-comment fa-2x" style="color: #4b4b4b;"></i>
                     </a>
                 </div>
