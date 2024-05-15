@@ -13,15 +13,14 @@
 }
 
 .AppDetail-ex{
-    width: 200px;
-    height: 200px;
-    border: 1px #e37141 solid;
+    width: 8rem;
+    height: auto;
     margin-top: 16px;
     margin-bottom: 16px;
 }
 
 .AppDetail-foot{
-    padding-top: 40px;
+    padding-top: 1.2rem;
 }
 
 .AppDetail-com{
@@ -34,6 +33,7 @@
     background-color: #fafafa;
     border:2px solid #4b4b4b;
     color: #4b4b4b;
+    padding: .1rem 1rem;
 }
 
 .AppDetail-fl-left{
@@ -45,5 +45,23 @@
 }
 
 .AppDetail-pad-botm{
-    padding-top: 32px;
+    padding-top: 1.5rem;
+}
+
+.AppDetail-LinkImage {
+    width: 8rem;
+}
+
+.AppDetail-div-center {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+}
+
+.AppDetail-a {
+    display: block;
+    height: auto;
+    text-decoration: none;
+    color: inherit;
 }
