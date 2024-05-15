@@ -24,3 +24,13 @@ header {
     color: #FAFAFA;
     text-decoration: none;
 }
+
+.Header-left{
+    float: left;
+}
+
+.Header-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
