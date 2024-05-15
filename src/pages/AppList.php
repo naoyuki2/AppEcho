@@ -9,7 +9,7 @@ $AppList = getAppList();
     foreach ($AppList as $app) {
     ?>
         <div class="AppList_content">
-            <a href="../AppDetail.php?<?php echo $app['id']?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
+            <a href=AppDetail.php?appId=<?php echo $app['id']?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
             <p class="AppList_p"><?php echo $app['name'] ?></p>
         </div>
     <?php

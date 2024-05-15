@@ -1,8 +1,7 @@
 <?php
     require_once '../components/Header.php';
-    require_once '../features/AppList/getReviews.php';
-    $Reviews = getReviews(1);
-
+    require_once '../features/AppReviews/getReviews.php';
+    $Reviews = getReviews($_GET['appId']);
 ?>
 
 <?php foreach($Reviews as $review){ ?>
