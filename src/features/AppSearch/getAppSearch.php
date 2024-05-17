@@ -1,7 +1,7 @@
 <?php
 require_once '../../config/db_connect.php';
 
-function getAppSearch()
+function getAppCategory()
 {
     global $pdo;
     $sql = $pdo->query('
