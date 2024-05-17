@@ -1,7 +1,7 @@
 <?php
 require_once '../components/Header.php';
 require_once '../features/AppSearch/getAppSearch.php';
-$AppCategory = getAppSearch();
+$AppCategory = getAppCategory();
 ?>
 
 <form action="#" method="post">
@@ -19,11 +19,11 @@ $AppCategory = getAppSearch();
             <div class="AppSearch-input">
                 <?php
                 $cnt = 1;
-                foreach ($AppCategory as $app) {
+                foreach ($AppCategory as $category) {
                 ?>
                     <div class="AppSearch-category">
-                        <input type="checkbox" name="category" class="btn-check" id="AppSearch-checkbox-category-<?php echo $app['id'] ?>" autocomplete="off" value="<?php echo $app['id'] ?>">
-                        <label class="btn btn-outline-primary" for="AppSearch-checkbox-category-<?php echo $app['id'] ?>"><?php echo $app['name'] ?></label>
+                        <input type="checkbox" name="category" class="btn-check" id="AppSearch-checkbox-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['id'] ?>">
+                        <label class="btn btn-outline-primary" for="AppSearch-checkbox-category-<?php echo $category['id'] ?>"><?php echo $category['name'] ?></label>
                     </div>
                 <?php
                     if ($cnt % 4 == 0) {
