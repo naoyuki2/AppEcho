@@ -1,6 +1,6 @@
 <?php
 require_once '../components/Header.php';
-require_once '../features/AppList/getAppInfo.php';
+require_once '../features/AppList/getAppList.php';
 $AppList = getAppList();
 ?>
 <div class="AppList_wrap">
