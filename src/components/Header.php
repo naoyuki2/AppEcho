@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../css/Header.css">
         <link rel="stylesheet" href="../css/AppSearch.css">
         <link rel="stylesheet" href="../css/AppFilter.css">
+        <link rel="stylesheet" href="../css/AppReviewFilter.css">
     </head>    <body> 
 
         <header>
