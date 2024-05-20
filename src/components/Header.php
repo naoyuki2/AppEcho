@@ -16,12 +16,13 @@
         <header>
             <div class="Header-left">
                 <div class="Header-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="../pages/AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
                 </div>
             </div>
             <div class="Header-center">
                 <div class="Header-logo">
-                    <img src="../../img/logo.png">
+                    <a href="../pages/AppList.php"><img src="../../img/logo.png"></a>
                 </div>
             </div>
+            <div class="Header-div"></div>
         </header>
