@@ -25,3 +25,8 @@
     font-size: .8rem;
     text-align: center;
 }
+
+.AppList_msg {
+    text-align: center;
+    margin: 1rem;
+}
