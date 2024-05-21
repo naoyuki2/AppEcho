@@ -1,5 +1,8 @@
 <?php
 require_once '../components/Header.php';
+require_once '../features/AppFilter/getTag.php';
+$Tag = getTag();
+
 ?>
 
 <form action="#" method="post">
@@ -10,16 +13,18 @@ require_once '../components/Header.php';
             <p class="AppFilter-subTitle">タグ</p>
             <div class="AppFilter-input">
                 <?php
-                for ($i = 1; $i <= 4; $i++) {
+                $count = 1;
+                foreach ($Tag as $tags) {
                 ?>
                     <div class="AppFilter-category">
-                        <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $i ?>" autocomplete="off" value="<?php $i ?>">
-                        <label class="btn btn-outline-primary" for="AppFilter-checkbox-category-<?php echo $i ?>">カテゴリ名<?php echo $i ?></label>
+                        <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tags['id'] ?>" autocomplete="off" value="<?php $tags['id'] ?>">
+                        <label class="btn btn-outline-primary" for="AppFilter-checkbox-category-<?php echo $tags['id'] ?>"><?php echo $tags['name'] ?></label>
                     </div>
                 <?php
-                    if ($i % 4 == 0) {
+                    if ($count % 4 == 0) {
                         echo '</div><div class="AppFilter-input">';
                     }
+                    $count++;
                 }
                 ?>
             </div>
