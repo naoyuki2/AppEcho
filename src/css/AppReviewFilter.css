@@ -3,3 +3,14 @@
 .AppFilter-wrap {
     margin: .5rem;
 }
+
+.AppFilter-input {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.AppFilter-submit {
+    display: flex;
+    margin: 4rem auto;
+}
