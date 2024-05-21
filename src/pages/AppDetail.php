@@ -37,13 +37,27 @@ foreach ($AppDetail as $detail) {
                     <p class="AppDetail-midasi">ダウンロード</p>
                 </b>
             </div>
-            <div class="AppDetail-div-center">
-                <a href="<?php echo $detail['appLink'] ?>" class="AppDetail-Link">
-                    <img src="https://nabettu.github.io/appreach/img/itune_ja.svg" alt="" class="AppDetail-LinkImage">
-                </a>
-                <a href="<?php echo $detail['playLink'] ?>" class="AppDetail-Link">
-                    <img src="https://nabettu.github.io/appreach/img/gplay_ja.png" alt="" class="AppDetail-LinkImage">
-                </a>
+
+            <div class="appreach">
+                <div class="appreach__detail">
+                    <div class="AppDetail-pad-left">
+                        <p class="appreach__info">
+                            <span class="appreach__posted">posted with
+                                <a href="https://mama-hack.com/app-reach/" title="アプリーチ" target="_blank" rel="nofollow">アプリーチ</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="appreach__links">
+                    <div class="AppDetail-div-center">
+                        <a href="<?php echo $detail['appLink'] ?>" class="AppDetail-Link">
+                            <img src="https://nabettu.github.io/appreach/img/itune_ja.svg" alt="" class="AppDetail-LinkImage">
+                        </a>
+                        <a href="<?php echo $detail['playLink'] ?>" class="AppDetail-Link">
+                            <img src="https://nabettu.github.io/appreach/img/gplay_ja.png" alt="" class="AppDetail-LinkImage">
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div align="left">

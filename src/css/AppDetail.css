@@ -48,6 +48,10 @@
     padding-top: 1.5rem;
 }
 
+.AppDetail-pad-left{
+    padding-left: 30px;
+}
+
 .AppDetail-LinkImage {
     width: 8rem;
 }
