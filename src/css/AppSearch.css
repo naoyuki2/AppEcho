@@ -12,10 +12,10 @@
     font-size: .8rem;
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active, .btn:hover {
+.btn-check:checked+.btn{
     background-color: #3EA632;
     border-color: #3EA632;
-    color: #fff;
+    color: #fafafa;
 }
 
 .fa-star {
@@ -51,17 +51,20 @@
 }
 
 .btn-outline-success {
-    color: #E37141;
-    border-color: #E37141;
+    --bs-btn-color: #E37141;
+    --bs-btn-border-color: #E37141;
+    --bs-btn-hover-color: #fafafa;
+    --bs-btn-hover-bg: #E37141;
+    --bs-btn-hover-border-color: #E37141;
+    --bs-btn-active-color: #fafafa;
+    --bs-btn-active-bg: #E37141;
+    --bs-btn-active-border-color: #E37141;
+    --bs-btn-disabled-color: #E37141;
+    --bs-btn-disabled-border-color: #E37141;
+    --bs-gradient: none;
     border-radius: 20px;
     padding: .3rem 1.5rem;
 }
-
-.btn-outline-success:hover {
-    background-color: #E37141;
-    border-color: #E37141;
-}
-
 .AppSearch-submit {
     display: flex;
     margin: 4rem auto;
