@@ -1,7 +1,7 @@
 <?php
 require_once '../components/Header.php';
 require_once '../features/AppFilter/getTag.php';
-$Tag = getTag();
+$Tags = getTag();
 
 ?>
 
@@ -14,11 +14,11 @@ $Tag = getTag();
             <div class="AppFilter-input">
                 <?php
                 $count = 1;
-                foreach ($Tag as $tags) {
+                foreach ($Tags as $tag) {
                 ?>
                     <div class="AppFilter-category">
-                        <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tags['id'] ?>" autocomplete="off" value="<?php $tags['id'] ?>">
-                        <label class="btn btn-outline-primary" for="AppFilter-checkbox-category-<?php echo $tags['id'] ?>"><?php echo $tags['name'] ?></label>
+                        <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tag['id'] ?>" autocomplete="off" value="<?php $tag['id'] ?>">
+                        <label class="btn btn-outline-primary" for="AppFilter-checkbox-category-<?php echo $tag['id'] ?>"><?php echo $tag['name'] ?></label>
                     </div>
                 <?php
                     if ($count % 4 == 0) {
