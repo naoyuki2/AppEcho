@@ -1,10 +1,10 @@
 <?php
 require_once '../components/Header.php';
-require_once '../features/AppSearch/getAppSearch.php';
+require_once '../features/AppSearch/getAppCategory.php';
 $AppCategory = getAppCategory();
 ?>
 
-<form action="./AppChoice.php" method="post">
+<form action="../features/AppSearch/AppChoice.php" method="post">
     <div class="AppSearch-wrap">
 
         <!-- アプリ名検索 -->

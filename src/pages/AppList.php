@@ -1,6 +1,6 @@
 <?php
 require_once '../components/Header.php';
-require_once '../features/AppList/getAppInfo.php';
+require_once '../features/AppList/getAppList.php';
 
 $AppList;
 $params = -1;   // 初期化
