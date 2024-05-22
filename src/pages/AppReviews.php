@@ -25,7 +25,7 @@
 
 <!-- モーダルを開くボタン -->
 <button type="button" class="btn btn-primary" id="AppReviews-openmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="AppReviews-plus fa-solid fa-plus fa-3x"></i>
+    <i class="AppReviews-plus fa-solid fa-plus"></i>
 </button>
 
 <!-- モーダルの内容 -->
@@ -38,17 +38,17 @@
       </div>
       <div class="modal-body">
         <div class="AppReviews-subtitle"><h4>評価</h4></div>
-        <div class="AppReviews-modal-star">
+        <div class="AppReviews-modal-star" id="modal-star">
             <input type="radio" class="AppReviews-radio-star" name="star" id="AppReviews-star-1">
-            <label for="AppReviews-star-1" class="AppReviews-radio-label" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
+            <label for="AppReviews-star-1" class="AppReviews-radio-label" id=1 onclick="toggleClass(0)"><i class="far fa-star"></i>1</label>
             <input type="radio" class="AppReviews-radio-star" name="star" id="AppReviews-star-2">
-            <label for="AppReviews-star-2" class="AppReviews-radio-label" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
+            <label for="AppReviews-star-2" class="AppReviews-radio-label" id=2 onclick="toggleClass(1)"><i class="far fa-star"></i>2</label>
             <input type="radio" class="AppReviews-radio-star" name="star" id="AppReviews-star-3">
-            <label for="AppReviews-star-3" class="AppReviews-radio-label" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
+            <label for="AppReviews-star-3" class="AppReviews-radio-label" id=3 onclick="toggleClass(2)"><i class="far fa-star"></i>3</label>
             <input type="radio" class="AppReviews-radio-star" name="star" id="AppReviews-star-4">
-            <label for="AppReviews-star-4" class="AppReviews-radio-label" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
+            <label for="AppReviews-star-4" class="AppReviews-radio-label" id=4 onclick="toggleClass(3)"><i class="far fa-star"></i>4</label>
             <input type="radio" class="AppReviews-radio-star" name="star" id="AppReviews-star-5">
-            <label for="AppReviews-star-5" class="AppReviews-radio-label" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
+            <label for="AppReviews-star-5" class="AppReviews-radio-label" id=5 onclick="toggleClass(4)"><i class="far fa-star"></i>5</label>
         </div>
         <div class="AppReviews-subtitle"><h4>タグ</h4></div>
         <div class="AppReviews-modal-tag">
@@ -71,7 +71,7 @@
   </div>
 </div>
 
-<script src="../features/AppSearch/AppSearch.js"></script>
+<script src="../features/AppReviews/AppReviews-modal-star.js"></script>
 
 <?php
     require_once '../components/Footer.php';
