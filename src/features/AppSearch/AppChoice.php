@@ -1,5 +1,5 @@
 <?php
-require_once '../features/AppSearch/AppSearch.php';
+require_once '../features/AppSearch/getAppSearch.php';
 
 if (!empty($_POST['AppName'])) {
     $text = $_POST['AppName'];
