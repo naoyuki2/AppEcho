@@ -1,0 +1,137 @@
+#AppReviews-openmodal{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+    background-color: #3EA632;
+    border-color: #3EA632;
+    border-radius: 50%;
+}
+
+.AppReviews-modal-star,.AppReviews-modal-tag {
+    margin-bottom: 30px;
+}
+
+.AppReviews-subtitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-left: .2rem solid #3EA632;
+    padding-left: .3rem;
+    margin: .5rem 0;
+    margin-bottom: 20px;
+}
+
+.AppReviews-radio-label{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.AppReviews-radio-star{
+    display: none;
+}
+
+.AppReviews-radio-star:checked + label{
+    background-color: #3EA632;
+    border-color: #3EA632;
+    color: #FAFAFA;
+}
+
+.AppReviews-radio-tag{
+    display: none;
+}
+
+.AppReviews-radio-label-impression{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1C90ED;
+    border-style: solid;
+    color: #1C90ED;
+}
+
+#AppReviews-impression:checked + label{
+    background-color: #1C90ED;
+    color: #FAFAFA;
+}
+
+.AppReviews-radio-label-improve{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F05959;
+    border-style: solid;
+    color: #F05959;
+}
+
+#AppReviews-improve:checked + label{
+    background-color: #F05959;
+    color: #FAFAFA;
+}
+
+.AppReviews-radio-label-question{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #B58500;
+    border-style: solid;
+    color: #B58500;
+}
+
+#AppReviews-question:checked + label{
+    background-color: #B58500;
+    color: #FAFAFA;
+}
+
+.AppReviews-radio-label-answer{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #8356F9;
+    border-style: solid;
+    color: #8356F9;
+}
+
+#AppReviews-answer:checked + label{
+    background-color: #8356F9;
+    color: #FAFAFA;
+}
+
+.AppReviews-review{
+    text-align: center;
+    width: 100%;
+    line-height: 9;
+}
+
+.modal-footer{
+    margin: 0 auto;
+}
+
+.AppReviews-post{
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E37141;
+    border-style: solid;
+    color: #E37141;
+    background-color: #FAFAFA;
+}
+
+.AppReviews-post:hover{
+    background-color: #E37141;
+    color: #FAFAFA;
+}

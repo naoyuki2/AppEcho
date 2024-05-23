@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../css/AppSearch.css">
         <link rel="stylesheet" href="../css/AppFilter.css">
         <link rel="stylesheet" href="../css/AppReviewFilter.css">
+        <link rel="stylesheet" href="../css/AppReviews-modal.css">
     </head>    <body> 
 
         <header>
