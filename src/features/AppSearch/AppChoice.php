@@ -1,5 +1,5 @@
 <?php
-require_once '../features/AppSearch/getAppSearch.php';
+require_once 'getAppSearch.php';
 
 if (!empty($_POST['AppName'])) {
     $text = $_POST['AppName'];
@@ -29,4 +29,4 @@ if ($appId != -1 && $appId != 0) {
     $queryString = http_build_query(['app' => 0]);
 }
 
-header('Location: ./AppList.php?'. $queryString);
+header('Location: ../../pages/AppList.php?'. $queryString);
