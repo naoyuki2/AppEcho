@@ -7,8 +7,8 @@ $AppList = getAppList();
 <div class="AppList-filta">
     <div class="AppList-input">
         <div class="AppList-category">
-            <button classs="AppList-btn">カテゴリ名<i class="fa-light fa-xmark" style="color: #4b4b4b;"></i></button>
-            <button classs="AppList-btn-reset">絞り込み解除</button>
+            <button class="AppList-btn">カテゴリ名<i class="fa-solid fa-xmark"></i></button>
+            <button class="AppList-btn-reset">絞り込み解除</button>
         </div>
     </div>
 </div>
