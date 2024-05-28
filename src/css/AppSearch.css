@@ -4,18 +4,21 @@
     margin: .5rem;
 }
 
-.btn-outline-primary, .btn-check+.btn:hover {
-    color: #4b4b4b;
-    border-color: #4b4b4b;
+.AppSearch-btn {
+    --bs-btn-color: #4b4b4b;
+    --bs-btn-border-color: #4b4b4b;
+    --bs-btn-hover-color: #fafafa;
+    --bs-btn-hover-bg: #3EA632;
+    --bs-btn-hover-border-color: #3EA632;
+    --bs-btn-active-color: #fafafa;
+    --bs-btn-active-bg: #3EA632;
+    --bs-btn-active-border-color: #3EA632;
+    --bs-btn-disabled-color: #4b4b4b;
+    --bs-btn-disabled-border-color: #4b4b4b;
+    --bs-gradient: none;
     border-radius: 20px;
     padding: .3rem .8rem;
     font-size: .8rem;
-}
-
-.btn-check:checked+.btn{
-    background-color: #3EA632;
-    border-color: #3EA632;
-    color: #fafafa;
 }
 
 .fa-star {

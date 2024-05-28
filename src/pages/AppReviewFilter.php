@@ -18,7 +18,8 @@ $Tags = getTag();
                 ?>
                     <div class="AppFilter-category">
                         <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tag['id'] ?>" autocomplete="off" value="<?php $tag['id'] ?>">
-                        <label class="btn btn-outline-primary" for="AppFilter-checkbox-category-<?php echo $tag['id'] ?>"><?php echo $tag['name'] ?></label>
+                        <label class="btn btn-outline-secondary AppFilter-tagBtn" for="AppFilter-checkbox-category-<?php echo $tag['id'] ?>"><?php echo $tag['name'] ?></label>
+                        <input type="hidden" value="<?php echo $tag['color'] ?>" class="AppFilter-tag">
                     </div>
                 <?php
                     if ($count % 4 == 0) {
@@ -38,19 +39,19 @@ $Tags = getTag();
             <div class="AppFilter-input">
                 <div class="AppFilter-star">
                     <input type="checkbox" name="star" class="btn-check" id="AppFilter-checkbox-star-5" autocomplete="off" value="5">
-                    <label class="btn btn-outline-primary" for="AppFilter-checkbox-star-5" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
+                    <label class="btn btn-outline-primary AppFilter-btn" for="AppFilter-checkbox-star-5" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
 
                     <input type="checkbox" name="star" class="btn-check" id="AppFilter-checkbox-star-4" autocomplete="off" value="4">
-                    <label class="btn btn-outline-primary" for="AppFilter-checkbox-star-4" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
+                    <label class="btn btn-outline-primary AppFilter-btn" for="AppFilter-checkbox-star-4" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
 
                     <input type="checkbox" name="star" class="btn-check" id="AppFilter-checkbox-star-3" autocomplete="off" value="3">
-                    <label class="btn btn-outline-primary" for="AppFilter-checkbox-star-3" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
+                    <label class="btn btn-outline-primary AppFilter-btn" for="AppFilter-checkbox-star-3" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
 
                     <input type="checkbox" name="star" class="btn-check" id="AppFilter-checkbox-star-2" autocomplete="off" value="2">
-                    <label class="btn btn-outline-primary" for="AppFilter-checkbox-star-2" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
+                    <label class="btn btn-outline-primary AppFilter-btn" for="AppFilter-checkbox-star-2" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
 
                     <input type="checkbox" name="star" class="btn-check" id="AppFilter-checkbox-star-1" autocomplete="off" value="1">
-                    <label class="btn btn-outline-primary" for="AppFilter-checkbox-star-1" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
+                    <label class="btn btn-outline-primary AppFilter-btn" for="AppFilter-checkbox-star-1" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
                 </div>
             </div>
         </div>

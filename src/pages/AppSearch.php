@@ -22,8 +22,8 @@ $AppCategory = getAppCategory();
                 foreach ($AppCategory as $category) {
                 ?>
                     <div class="AppSearch-category">
-                        <input type="checkbox" name="category[]" class="btn-check" id="AppSearch-checkbox-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['name'] ?>">
-                        <label class="btn btn-outline-primary" for="AppSearch-checkbox-category-<?php echo $category['id'] ?>"><?php echo $category['name'] ?></label>
+                        <input type="checkbox" name="category[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['name'] ?>">
+                        <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-category-<?php echo $category['id'] ?>"><?php echo $category['name'] ?></label>
                     </div>
                 <?php
                     if ($cnt % 4 == 0) {
@@ -43,20 +43,20 @@ $AppCategory = getAppCategory();
             </div>
             <div class="AppSearch-input">
                 <div class="AppSearch-star">
-                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-5" autocomplete="off" value="5">
-                    <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-5" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
+                    <input type="checkbox" name="star[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-star-5" autocomplete="off" value="5">
+                    <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-star-5" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
 
-                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-4" autocomplete="off" value="4">
-                    <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-4" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
+                    <input type="checkbox" name="star[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-star-4" autocomplete="off" value="4">
+                    <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-star-4" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
 
-                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-3" autocomplete="off" value="3">
-                    <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-3" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
+                    <input type="checkbox" name="star[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-star-3" autocomplete="off" value="3">
+                    <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-star-3" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
 
-                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-2" autocomplete="off" value="2">
-                    <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-2" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
+                    <input type="checkbox" name="star[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-star-2" autocomplete="off" value="2">
+                    <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-star-2" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
 
-                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-1" autocomplete="off" value="1">
-                    <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-1" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
+                    <input type="checkbox" name="star[]" class="btn-check AppSearch-btnCheck" id="AppSearch-checkbox-star-1" autocomplete="off" value="1">
+                    <label class="btn btn-outline-primary AppSearch-btn" for="AppSearch-checkbox-star-1" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
                 </div>
             </div>
         </div>
