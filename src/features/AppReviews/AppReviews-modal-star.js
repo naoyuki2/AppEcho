@@ -16,3 +16,17 @@ function toggleClass(el) {
         }
     }
 }
+
+function tagBgChange(id){
+    const target = document.getElementById("modal-tag").getElementsByTagName("label");
+    for(var i = 0;i < target.length;i++){
+        var tagColor = target[i].id;
+        if(i + 1 == id){
+            target[i].style.backgroundColor = tagColor;
+            target[i].style.color = '#FAFAFA';
+        }else{
+            target[i].style.backgroundColor = '#FAFAFA';
+            target[i].style.color = tagColor;
+        }
+    }
+}
