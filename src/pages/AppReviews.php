@@ -55,14 +55,12 @@
         </div>
         <div class="AppReviews-subtitle"><h4>タグ</h4></div>
         <div class="AppReviews-modal-tag">
-            <input type="radio" class="AppReviews-radio-tag" name="tag" id="AppReviews-impression">
-            <label for="AppReviews-impression" class="AppReviews-radio-label-impression">感想</label>
-            <input type="radio" class="AppReviews-radio-tag" name="tag" id="AppReviews-improve">
-            <label for="AppReviews-improve" class="AppReviews-radio-label-improve">改善提案</label>
-            <input type="radio" class="AppReviews-radio-tag" name="tag" id="AppReviews-question">
-            <label for="AppReviews-question" class="AppReviews-radio-label-question">質問</label>
-            <input type="radio" class="AppReviews-radio-tag" name="tag" id="AppReviews-answer">
-            <label for="AppReviews-answer" class="AppReviews-radio-label-answer">回答</label>
+          <?php foreach($GetTags as $tagModal){ ?>
+            <input type="radio" class="AppReviews-radio-tag" name="tag">
+            <label for="AppReviews-tag-label" class="AppReviews-radio-label" id="#<?php echo $tagModal['color'] ?>" 
+            style="color: #<?php echo $tagModal['color'] ?>; border-color: #<?php echo $tagModal['color'] ?>;"
+            onclick="tagBgChange(<?php echo $tagModal['id']?>)"><?php echo $tagModal['name'] ?></label>
+          <?php } ?>
         </div>
         <div class="AppReviews-subtitle"><h4>レビュー</h4></div>
         <div><input type="text" class="AppReviews-review" name="content" id="" placeholder="入力してください"></div>
