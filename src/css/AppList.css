@@ -27,9 +27,9 @@
 }
 
 .AppList-input{
-    padding-top: 16px;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-top: 8px;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 .AppList-btn{
@@ -45,6 +45,22 @@
     border-color: #e37141;
     background-color: #fafafa;
     border-radius: 20px;
+}
+
+.AppList-fl-left{
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.AppList-fl-right{
+    float: right;
+}
+
+.AppList-fl-clear{
+    clear: both;
 }
 
 .AppList_msg {

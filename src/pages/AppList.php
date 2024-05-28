@@ -7,15 +7,37 @@ $AppList = getAppList();
 <div class="AppList-filta">
     <div class="AppList-input">
         <div class="AppList-category">
-            <button class="AppList-btn">
-                カテゴリ名<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
-            </button>
-            <button class="AppList-btn">
-                <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
-                5
-                <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
-            </button>
-            <button class="AppList-btn-reset">絞り込み解除</button>
+            <div class="AppList-fl-left">
+                <button class="AppList-btn">
+                    カテゴリ名<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                </button>
+            </div>
+            <div class="AppList-fl-left">
+                <button class="AppList-btn">
+                    カテゴリ名<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                </button>
+            </div>
+            <div class="AppList-fl-left">
+                <button class="AppList-btn">
+                    カテゴリ名<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                </button>
+            </div>
+            <div class="AppList-fl-left">
+                <button class="AppList-btn">
+                    カテゴリ名<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                </button>
+            </div>
+            <div class="AppList-fl-left">
+                <button class="AppList-btn">
+                    <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
+                    5
+                    <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                </button>
+            </div>
+            <div class="AppList-fl-right">
+                <button class="AppList-btn-reset">絞り込み解除</button>
+            </div>
+            <div class="AppList-fl-clear"></div>
         </div>
     </div>
 </div>
