@@ -26,6 +26,27 @@
     text-align: center;
 }
 
+.AppList-input{
+    padding-top: 16px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.AppList-btn{
+    color: #4b4b4b;
+    border-color: #4b4b4b;
+    background-color: #fafafa;
+    border-radius: 20px;
+}
+
+
+.AppList-btn-reset{
+    color: #e37141;
+    border-color: #e37141;
+    background-color: #fafafa;
+    border-radius: 20px;
+}
+
 .AppList_msg {
     text-align: center;
     margin: 1rem;
