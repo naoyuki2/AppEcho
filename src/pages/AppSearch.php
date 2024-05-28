@@ -1,8 +1,10 @@
 <?php
 require_once '../components/Header.php';
+require_once '../features/AppSearch/getAppCategory.php';
+$AppCategory = getAppCategory();
 ?>
 
-<form action="#" method="post">
+<form action="../features/AppSearch/AppChoice.php" method="post">
     <div class="AppSearch-wrap">
 
         <!-- アプリ名検索 -->
@@ -16,16 +18,18 @@ require_once '../components/Header.php';
             <p class="AppSearch-subTitle">カテゴリ</p>
             <div class="AppSearch-input">
                 <?php
-                for ($i = 1; $i <= 4; $i++) {
+                $cnt = 1;
+                foreach ($AppCategory as $category) {
                 ?>
                     <div class="AppSearch-category">
-                        <input type="checkbox" name="category" class="btn-check" id="AppSearch-checkbox-category-<?php echo $i ?>" autocomplete="off" value="<?php $i ?>">
-                        <label class="btn btn-outline-primary" for="AppSearch-checkbox-category-<?php echo $i ?>">カテゴリ名<?php echo $i ?></label>
+                        <input type="checkbox" name="category[]" class="btn-check" id="AppSearch-checkbox-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['name'] ?>">
+                        <label class="btn btn-outline-primary" for="AppSearch-checkbox-category-<?php echo $category['id'] ?>"><?php echo $category['name'] ?></label>
                     </div>
                 <?php
-                    if ($i % 4 == 0) {
+                    if ($cnt % 4 == 0) {
                         echo '</div><div class="AppSearch-input">';
                     }
+                    $cnt++;
                 }
                 ?>
             </div>
@@ -39,19 +43,19 @@ require_once '../components/Header.php';
             </div>
             <div class="AppSearch-input">
                 <div class="AppSearch-star">
-                    <input type="checkbox" name="star" class="btn-check" id="AppSearch-checkbox-star-5" autocomplete="off" value="5">
+                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-5" autocomplete="off" value="5">
                     <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-5" onclick="toggleClass(this)"><i class="far fa-star"></i>5</label>
 
-                    <input type="checkbox" name="star" class="btn-check" id="AppSearch-checkbox-star-4" autocomplete="off" value="4">
+                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-4" autocomplete="off" value="4">
                     <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-4" onclick="toggleClass(this)"><i class="far fa-star"></i>4</label>
 
-                    <input type="checkbox" name="star" class="btn-check" id="AppSearch-checkbox-star-3" autocomplete="off" value="3">
+                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-3" autocomplete="off" value="3">
                     <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-3" onclick="toggleClass(this)"><i class="far fa-star"></i>3</label>
 
-                    <input type="checkbox" name="star" class="btn-check" id="AppSearch-checkbox-star-2" autocomplete="off" value="2">
+                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-2" autocomplete="off" value="2">
                     <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-2" onclick="toggleClass(this)"><i class="far fa-star"></i>2</label>
 
-                    <input type="checkbox" name="star" class="btn-check" id="AppSearch-checkbox-star-1" autocomplete="off" value="1">
+                    <input type="checkbox" name="star[]" class="btn-check" id="AppSearch-checkbox-star-1" autocomplete="off" value="1">
                     <label class="btn btn-outline-primary" for="AppSearch-checkbox-star-1" onclick="toggleClass(this)"><i class="far fa-star"></i>1</label>
                 </div>
             </div>
@@ -61,15 +65,12 @@ require_once '../components/Header.php';
         <div class="AppSearch-content">
             <p class="AppSearch-subTitle">並び替え</p>
             <div class="AppSearch-input">
-                <select class="form-select">
+                <select class="form-select" name="sort">
                     <option value="0" selected>選択なし</option>
-                    <?php
-                    for ($i = 1; $i <= 4; $i++) {
-                    ?>
-                        <option value="<?php echo $i ?>">並び替え条件<?php echo $i ?></option>
-                    <?php
-                    }
-                    ?>
+                    <option value="1">評価が高い順</option>
+                    <option value="2">評価が低い順</option>
+                    <option value="3">新しい順</option>
+                    <option value="4">古い順</option>
                 </select>
             </div>
         </div>

@@ -46,3 +46,8 @@
     background-color: #fafafa;
     border-radius: 20px;
 }
+
+.AppList_msg {
+    text-align: center;
+    margin: 1rem;
+}
