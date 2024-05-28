@@ -4,7 +4,7 @@ require_once '../../config/db_connect.php';
     function getTag(){
         global $pdo;
         $sql = $pdo->query('
-            SELECT tag.id, tag.name
+            SELECT tag.id, tag.name, tag.color
             FROM tag
         ');
         return $sql->fetchAll();
