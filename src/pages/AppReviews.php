@@ -1,8 +1,10 @@
 <?php
     require_once '../components/Header.php';
     require_once '../features/AppReviews/getReviews.php';
+    require_once '../features/AppFilter/getTag.php';
     $appId = $_GET['appId'];
     $Reviews = getReviews($appId);
+    $GetTags = getTag();
 ?>
 
 <?php foreach($Reviews as $review){ ?>
