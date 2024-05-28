@@ -56,7 +56,7 @@
             <label for="AppReviews-star-5" class="AppReviews-radio-label" id=5 onclick="toggleClass(4)"><i class="far fa-star"></i>5</label>
         </div>
         <div class="AppReviews-subtitle"><h4>タグ</h4></div>
-        <div class="AppReviews-modal-tag">
+        <div class="AppReviews-modal-tag" id="modal-tag">
           <?php foreach($GetTags as $tagModal){ ?>
             <input type="radio" class="AppReviews-radio-tag" name="tag">
             <label for="AppReviews-tag-label" class="AppReviews-radio-label" id="#<?php echo $tagModal['color'] ?>" 
