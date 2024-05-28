@@ -22,6 +22,7 @@ $AppList = getAppList();
 
 <div class="AppList_wrap">
 
+<?php
 $AppList;
 $params = -1;   // 初期化
 
