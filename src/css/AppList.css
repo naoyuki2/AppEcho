@@ -62,3 +62,8 @@
 .AppList-fl-clear{
     clear: both;
 }
+
+.AppList_msg {
+    text-align: center;
+    margin: 1rem;
+}
