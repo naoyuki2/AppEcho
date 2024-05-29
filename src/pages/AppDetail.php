@@ -97,9 +97,9 @@ foreach ($AppDetail as $detail) {
                 </div>
                 <div class="AppDetail-fl-right">
                     <div class="AppDetail-pad-botm">
-                        <a href="../pages/AppList.php" class="AppDetail-a">
-                            <p class="AppDetail-categori"><?php echo $detail['category_name'] ?></p>
-                        </a>
+                        <form action="../features/AppSearch/AppChoice.php" method="post">
+                            <input type="submit" value="<?php echo $detail['category_name'] ?>" class="AppDetail-categori" name="category[]">
+                        </form>
                     </div>
                 </div>
             </div>
