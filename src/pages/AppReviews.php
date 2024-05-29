@@ -93,7 +93,7 @@
           <?php } ?>
         </div>
         <div class="AppReviews-subtitle"><h4>レビュー</h4></div>
-        <div><input type="text" class="AppReviews-review" name="content" id="" placeholder="入力してください"></div>
+        <div><textarea class="AppReviews-review" name="content" placeholder="入力してください"></textarea></div>
       </div>
       <div class="modal-footer">
         <button type="submit" class="AppReviews-post" data-bs-dismiss="modal" aria-label="Close">投稿する</button>
