@@ -20,7 +20,7 @@
                 </button>
             </div>
             <div class="AppReviews-fl-right">
-                <i class="fa-solid fa-filter"></i>
+                <i class="fa-solid fa-filter fa-2x"></i>
             </div>
             <div class="AppReviews-fl-right">
                 <button class="AppReviews-btn-reset">絞り込み解除</button>
