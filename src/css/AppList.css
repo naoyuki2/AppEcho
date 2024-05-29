@@ -57,6 +57,7 @@
 
 .AppList-fl-right{
     float: right;
+    padding-right: 4px;
 }
 
 .AppList-fl-clear{
