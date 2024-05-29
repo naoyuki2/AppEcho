@@ -4,7 +4,7 @@
     $Reviews = getReviews($_GET['appId']);
 ?>
 
-<div class="AppReviews-filta">
+<div class="AppReviews-fi">
     <div class="AppReviews-input">
         <div class="AppReviews-category">
             <div class="AppReviews-fl-left">
@@ -20,7 +20,7 @@
                 </button>
             </div>
             <div class="AppReviews-fl-right">
-                <i class="fa-regular fa-filter" style="color: #4b4b4b;"></i>
+                <i class="fa-solid fa-filter"></i>
             </div>
             <div class="AppReviews-fl-right">
                 <button class="AppReviews-btn-reset">絞り込み解除</button>
