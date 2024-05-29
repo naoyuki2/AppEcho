@@ -23,7 +23,9 @@
                 </button>
             </div>
             <div class="AppReviews-fl-right">
-                <i class="fa-solid fa-filter fa-2x"></i>
+                <div class="AppReviews-fi-a">
+                    <a href="AppReviewFilter.php"><i class="fa-solid fa-filter fa-2x"></i></a>
+                </div>
             </div>
             <div class="AppReviews-fl-right">
                 <button class="AppReviews-btn-reset">絞り込み解除</button>
