@@ -46,7 +46,7 @@
             <?php echo $review['tag_name'] ?>
         </span>
         <p class="AppReviews-comment">
-            <?php echo $review['content'] ?>
+            <?php echo nl2br($review['content']) ?>
         </p>
         <div class="AppReviews-date">
             <?php echo $review['post_date'] ?>
