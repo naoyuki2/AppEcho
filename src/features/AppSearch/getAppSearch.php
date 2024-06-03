@@ -34,16 +34,16 @@ function getAppSearch($text, $category, $star)
             // 配列splitの内容が配列keywordに存在するか
             if (array_intersect($split, $keyword)) {
                 array_push($appId_text, $app['id']);
+                $cnt['app_text'] = true;
             }
-            $cnt['app_text'] = true;
         }
 
         // カテゴリー
         if ($category != 0) {
             if (in_array($app['category_name'], $category)) {
                 array_push($appId_category, $app['id']);
+                $cnt['app_category'] = true;
             }
-            $cnt['app_category'] = true;
         } else {
             array_push($appId_category, 0);
         }
@@ -52,8 +52,8 @@ function getAppSearch($text, $category, $star)
         if ($star != 0) {
             if (in_array($app['star'], $star)) {
                 array_push($appId_star, $app['id']);
+                $cnt['app_star'] = true;
             }
-            $cnt['app_star'] = true;
         } else {
             array_push($appId_star, 0);
         }
@@ -61,41 +61,45 @@ function getAppSearch($text, $category, $star)
 
     $appId = [];
 
-    if ($cnt['app_text']) {
-        $intersection = $appId_text;
-
-        if ($cnt['app_category']) {
-            $intersection = array_intersect($intersection, $appId_category);
-        }
-
-        if ($cnt['app_star']) {
-            $intersection = array_intersect($intersection, $appId_star);
-        }
-
-        if (!empty($intersection)) {
-            array_push($appId, $intersection);
-        } else {
-            $appId = 0; // 該当なし
-        }
-    } else if ($cnt['app_category']) {
-        $intersection = $appId_category;
-
-        if ($cnt['app_star']) {
-            $intersection = array_intersect($intersection, $appId_star);
-        }
-
-        if (!empty($intersection)) {
-            array_push($appId, $intersection);
-        } else {
-            $appId = 0; // 該当なし
-        }
+    if ($text == 0 && $category == 0  && $star == 0) {
+        return -1;
     } else {
-        if ($cnt['app_star']) {
-            array_push($appId, $appId_star);
-        } else {
-            $appId = -1;    // ひとつも選択されていないので全件取得
-        }
-    }
+        if ($cnt['app_text']) {
+            $intersection = $appId_text;
 
-    return $appId;
+            if ($cnt['app_category']) {
+                $intersection = array_intersect($intersection, $appId_category);
+            }
+
+            if ($cnt['app_star']) {
+                $intersection = array_intersect($intersection, $appId_star);
+            }
+
+            if (!empty($intersection)) {
+                array_push($appId, $intersection);
+            } else {
+                $appId = 0; // 該当なし
+            }
+        } else if ($cnt['app_category']) {
+            $intersection = $appId_category;
+
+            if ($cnt['app_star']) {
+                $intersection = array_intersect($intersection, $appId_star);
+            }
+
+            if (!empty($intersection)) {
+                array_push($appId, $intersection);
+            } else {
+                $appId = 0; // 該当なし
+            }
+        } else {
+            if ($cnt['app_star']) {
+                array_push($appId, $appId_star);
+            } else {
+                $appId = 0;    // ひとつも選択されていないので全件取得
+            }
+        }
+
+        return $appId;
+    }
 }
