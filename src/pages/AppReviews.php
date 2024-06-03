@@ -86,7 +86,7 @@
         <div class="AppReviews-subtitle"><h4>タグ</h4></div>
         <div class="AppReviews-modal-tag" id="modal-tag">
           <?php foreach($GetTags as $tagModal){ ?>
-            <input type="radio" class="AppReviews-radio-tag" name="tag">
+            <input type="radio" class="AppReviews-radio-tag" name="tagId" value="aaa" >
             <label for="AppReviews-tag-label" class="AppReviews-radio-label" id="#<?php echo $tagModal['color'] ?>" 
             style="color: #<?php echo $tagModal['color'] ?>; border-color: #<?php echo $tagModal['color'] ?>;"
             onclick="tagBgChange(<?php echo $tagModal['id']?>)"><?php echo $tagModal['name'] ?></label>
