@@ -7,6 +7,7 @@ $AppList = getAppList();
 <?php
 $AppList;
 $tagFlg = false;
+$textFlg = false;
 $categoryFlg = false;
 $starFlg = false;
 $categories = [];
@@ -16,8 +17,16 @@ if (!empty($_SERVER['QUERY_STRING'])) { // getパラメーターの存在チェ�
     $queryString = $_SERVER['QUERY_STRING'];
     parse_str($queryString, $params);   // url文字列の解析
 
+    $textIndex = null;
     $starIndex = null;
     $categoryIndex = null;
+
+    foreach ($params as $key => $value) {
+        if (strpos($key, 'text') !== false) {
+            $textIndex = $key;
+            break;
+        }
+    }
 
     foreach ($params as $key => $value) {
         if (strpos($key, 'star') !== false) {
@@ -32,25 +41,38 @@ if (!empty($_SERVER['QUERY_STRING'])) { // getパラメーターの存在チェ�
         }
     }
 
-    if ($starIndex !== null && $categoryIndex !== null) {
-        $before = array_slice($params, 0, array_search(min($starIndex, $categoryIndex), array_keys($params)));
-        $categories = $_GET['category'];
-        $stars = $_GET['star'];
+    if ($textIndex !== null) {
+        $before = array_slice($params, 0, array_search($textIndex, array_keys($params)));
+        if (is_array($_GET['text'])) {
+            $split = $_GET['text'];
+        } else {
+            $pattern = "/[\s,、]/";
+            $split = preg_split($pattern, $_GET['text']);
+        }
+        $textFlg = true;
 
-        $categoryFlg = true;
-        $starFlg = true;
+        if ($starIndex !== null) {
+            $stars = $_GET['star'];
+            $starFlg = true;
+        }
+
+        if ($categoryIndex !== null) {
+            $categories = $_GET['category'];
+            $categoryFlg = true;
+        }
     } else if ($starIndex !== null) {
         $before = array_slice($params, 0, array_search($starIndex, array_keys($params)));
         $stars = $_GET['star'];
-
         $starFlg = true;
+
+        if ($categoryIndex !== null) {
+            $categories = $_GET['category'];
+            $categoryFlg = true;
+        }
     } else if ($categoryIndex !== null) {
         $before = array_slice($params, 0, array_search($categoryIndex, array_keys($params)));
         $categories = $_GET['category'];
-
         $categoryFlg = true;
-    } else {
-        $before = $params;
     }
 } else {
     $params = -1;
@@ -81,13 +103,33 @@ if ($AppList == 0) {
                 <div class="AppList-category">
                     <form action="../features/AppSearch/AppChoice.php" method="post" name="tagForm">
                         <?php
+                        if ($textFlg) {
+                        ?>
+                            <div class="AppList-fl-left">
+                                <?php
+                                $textCnt = 0;
+                                for ($i = 0; $i < count($split); $i++) {
+                                    if ($split[$i] !== "") {
+                                ?>
+                                        <input type="hidden" name="AppName[]" value="<?php echo $split[$i] ?>" class="AppList-btn-text">
+                                        <button type="button" class="AppList-btn" onclick="textCancel(<?php echo $textCnt ?>)">
+                                            <?php echo $split[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        </button>
+                                <?php
+                                        $textCnt++;
+                                    }
+                                }
+                                ?>
+                            </div>
+                        <?php
+                        }
                         if ($categoryFlg) {
                         ?>
                             <div class="AppList-fl-left">
                                 <?php
                                 for ($i = 0; $i < count($categories); $i++) {
                                 ?>
-                                <input type="hidden" name="category[]" value="<?php echo $categories[$i] ?>" class="AppList-btn-category">
+                                    <input type="hidden" name="category[]" value="<?php echo $categories[$i] ?>" class="AppList-btn-category">
                                     <button type="button" class="AppList-btn" onclick="categoryCancel(<?php echo $i ?>)">
                                         <?php echo $categories[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                     </button>
