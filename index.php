@@ -1,3 +1,3 @@
 <?php
-    header('Location: ./src/pages/AppList.php');
+    header('Location: ./src/pages/user/AppList.php');
 ?>

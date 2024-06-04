@@ -1,7 +1,7 @@
 <?php
-    require_once '../components/Header.php';
-    require_once '../features/AppReviews/getReviews.php';
-    require_once '../features/AppFilter/getTag.php';
+    require_once '../../components/Header.php';
+    require_once '../../features/AppReviews/getReviews.php';
+    require_once '../../features/AppFilter/getTag.php';
     $appId = $_GET['appId'];
     $Reviews = getReviews($appId);
     $GetTags = getTag();
@@ -60,7 +60,7 @@
 </button>
 
 <!-- モーダルの内容 -->
-<form action="../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post">
+<form action="../../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post">
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -103,8 +103,8 @@
 </div>
 </form>
 
-<script src="../features/AppReviews/AppReviews-modal-star.js"></script>
+<script src="../../features/AppReviews/AppReviews-modal-star.js"></script>
 
 <?php
-    require_once '../components/Footer.php';
+    require_once '../../components/Footer.php';
 ?>

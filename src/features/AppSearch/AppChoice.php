@@ -48,4 +48,4 @@ if ($appId != -1 && $appId != 0) {
     $queryString = http_build_query(['app' => 0]);
 }
 
-header('Location: ../../pages/AppList.php?'. $queryString);
+header('Location: ../../pages/user/AppList.php?'. $queryString);
