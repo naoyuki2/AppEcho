@@ -11,7 +11,7 @@ $star = $_POST['star'];
 
 postReviews($appId, 1, $content, $star);
 
-header('Location: ../../pages/AppReviews.php?appId='.$appId);
+header('Location: ../../pages/user/AppReviews.php?appId='.$appId);
 exit();
 
 function postReviews($appId, $tagId, $content, $star) {
