@@ -1,3 +1,13 @@
+function textCancel(el) {
+    const form = document.forms["tagForm"];
+
+    const className = document.getElementsByClassName("AppList-btn-text");
+    const removeInput = className[el];
+
+    removeInput.parentNode.removeChild(removeInput);
+    form.submit();
+}
+
 function starCancel(el) {
     const form = document.forms["tagForm"];
 
