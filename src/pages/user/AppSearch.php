@@ -1,6 +1,6 @@
 <?php
-require_once '../../components/Header.php';
-require_once '../../features/AppSearch/getAppCategory.php';
+require_once dirname(__FILE__, 3) . '/components/Header.php';
+require_once dirname(__FILE__, 3) . '/features/AppSearch/getAppCategory.php';
 $AppCategory = getAppCategory();
 ?>
 
@@ -81,5 +81,5 @@ $AppCategory = getAppCategory();
 <script src="../../features/AppSearch/AppSearch.js"></script>
 
 <?php
-require_once '../../components/Footer.php';
+    require_once dirname(__FILE__, 3) . '/components/Footer.php';
 ?>

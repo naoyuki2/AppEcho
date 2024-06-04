@@ -1,5 +1,5 @@
 <?php
-require_once '../../../config/db_connect.php';
+require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 
 // PDOオブジェクトの設定
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -10,7 +10,6 @@ $content = $_POST['content'];
 $star = $_POST['star'];
 
 postReviews($appId, $tagId, $content, $star);
-
 header('Location: ../../pages/user/AppReviews.php?appId='.$appId);
 exit();
 

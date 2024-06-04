@@ -1,5 +1,5 @@
 <?php
-require_once '../../../config/db_connect.php';
+require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 
     function getTag(){
         global $pdo;
