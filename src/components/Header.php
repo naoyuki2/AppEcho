@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="../../css/AppFilter.css">
         <link rel="stylesheet" href="../../css/AppReviewFilter.css">
         <link rel="stylesheet" href="../../css/AppReviews-modal.css">
-    </head>    <body> 
-
+    </head>
+        <body> 
         <header>
             <div class="Header-left">
                 <div class="Header-search">
