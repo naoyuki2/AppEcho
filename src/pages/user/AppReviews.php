@@ -1,7 +1,7 @@
 <?php
-    require_once '../../components/Header.php';
-    require_once '../../features/AppReviews/getReviews.php';
-    require_once '../../features/AppFilter/getTag.php';
+    require_once dirname(__FILE__, 3) . '/components/Header.php';
+    require_once dirname(__FILE__, 3) . '/features/AppReviews/getReviews.php';
+    require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
     $appId = $_GET['appId'];
     $Reviews = getReviews($appId);
     $GetTags = getTag();
@@ -106,5 +106,5 @@
 <script src="../../features/AppReviews/AppReviews-modal-star.js"></script>
 
 <?php
-    require_once '../../components/Footer.php';
+    require_once dirname(__FILE__, 3) . '/components/Footer.php';
 ?>

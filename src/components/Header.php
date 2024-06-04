@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="../../css/AppDetail.css">
         <link rel="stylesheet" href="../../css/Header.css">
         <link rel="stylesheet" href="../../css/AppSearch.css">
-        <link rel="stylesheet" href="../../css/AppFilter.css">
         <link rel="stylesheet" href="../../css/AppReviewFilter.css">
         <link rel="stylesheet" href="../../css/AppReviews-modal.css">
     </head>

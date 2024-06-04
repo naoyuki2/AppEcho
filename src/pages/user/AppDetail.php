@@ -1,6 +1,6 @@
 <?php
-require_once '../../components/Header.php';
-require_once '../../features/AppDetail/getAppDetail.php';
+require_once dirname(__FILE__, 3) . '/components/Header.php';
+require_once dirname(__FILE__, 3) . '/features/AppDetail/getAppDetail.php';
 
 $appId = $_GET['appId'];
 $AppDetail = getAppDetail($appId);
@@ -110,5 +110,5 @@ foreach ($AppDetail as $detail) {
 ?>
 
 <?php
-require_once '../../components/Footer.php';
+require_once dirname(__FILE__, 3) . '/components/Footer.php';
 ?>
