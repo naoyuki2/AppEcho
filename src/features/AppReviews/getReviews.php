@@ -9,6 +9,7 @@ require_once dirname(__FILE__, 4) . '/config/db_connect.php';
             INNER JOIN tag 
             ON review.tag_id = tag.id
             WHERE review.app_id = ?
+            ORDER BY review.post_date DESC
         ');
         $sql->execute([$appId]);
         return $sql->fetchAll();
