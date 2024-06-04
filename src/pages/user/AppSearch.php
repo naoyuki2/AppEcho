@@ -1,10 +1,10 @@
 <?php
-require_once '../components/Header.php';
-require_once '../features/AppSearch/getAppCategory.php';
+require_once '../../components/Header.php';
+require_once '../../features/AppSearch/getAppCategory.php';
 $AppCategory = getAppCategory();
 ?>
 
-<form action="../features/AppSearch/AppChoice.php" method="post">
+<form action="../../features/AppSearch/AppChoice.php" method="post">
     <div class="AppSearch-wrap">
 
         <!-- アプリ名検索 -->
@@ -78,8 +78,8 @@ $AppCategory = getAppCategory();
     </div>
 </form>
 
-<script src="../features/AppSearch/AppSearch.js"></script>
+<script src="../../features/AppSearch/AppSearch.js"></script>
 
 <?php
-require_once '../components/Footer.php';
+require_once '../../components/Footer.php';
 ?>

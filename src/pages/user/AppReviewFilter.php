@@ -1,6 +1,6 @@
 <?php
-require_once '../components/Header.php';
-require_once '../features/AppFilter/getTag.php';
+require_once '../../components/Header.php';
+require_once '../../features/AppFilter/getTag.php';
 $Tags = getTag();
 
 ?>
@@ -76,8 +76,8 @@ $Tags = getTag();
     </div>
 </form>
 
-<script src="../features/AppFilter/AppFilter.js"></script>
+<script src="../../features/AppFilter/AppFilter.js"></script>
 
 <?php
-require_once '../components/Footer.php';
+require_once '../../components/Footer.php';
 ?>

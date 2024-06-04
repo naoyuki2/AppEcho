@@ -1,6 +1,6 @@
 <?php
-require_once '../components/Header.php';
-require_once '../features/AppDetail/getAppDetail.php';
+require_once '../../components/Header.php';
+require_once '../../features/AppDetail/getAppDetail.php';
 
 $appId = $_GET['appId'];
 $AppDetail = getAppDetail($appId);
@@ -91,13 +91,13 @@ foreach ($AppDetail as $detail) {
             <div class="AppDetail-foot">
                 <div class="AppDetail-fl-left">
                     <p class="AppDetail-com"><?php echo $detail['review'] ?></p>
-                    <a href="../pages/AppReviews.php?appId=<?php echo $appId ?>" class="AppDetail-a">
+                    <a href="./AppReviews.php?appId=<?php echo $appId ?>" class="AppDetail-a">
                         <i class="fa-regular fa-comment fa-2x" style="color: #4b4b4b;"></i>
                     </a>
                 </div>
                 <div class="AppDetail-fl-right">
                     <div class="AppDetail-pad-botm">
-                        <form action="../features/AppSearch/AppChoice.php" method="post">
+                        <form action="../../features/AppSearch/AppChoice.php" method="post">
                             <input type="submit" value="<?php echo $detail['category_name'] ?>" class="AppDetail-categori" name="category[]">
                         </form>
                     </div>
@@ -110,5 +110,5 @@ foreach ($AppDetail as $detail) {
 ?>
 
 <?php
-require_once '../components/Footer.php';
+require_once '../../components/Footer.php';
 ?>

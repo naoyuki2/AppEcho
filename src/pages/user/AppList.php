@@ -1,6 +1,6 @@
 <?php
-require_once '../components/Header.php';
-require_once '../features/AppList/getAppList.php';
+require_once '../../components/Header.php';
+require_once '../../features/AppList/getAppList.php';
 $AppList = getAppList();
 ?>
 
@@ -146,7 +146,6 @@ if ($AppList == 0) {
 
         </div>
         <script src="../features/AppList/AppList.js"></script>
-
-        <?php
-        require_once '../components/Footer.php';
-        ?>
+    <?php
+    require_once '../../components/Footer.php';
+    ?>
