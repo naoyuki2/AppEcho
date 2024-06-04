@@ -24,9 +24,13 @@ function getAppSearch($text, $category, $star)
     foreach ($AppSearch as $app) {
         // アプリ名
         if ($text != 0) {
-            // カンマもしくは空白で分割
-            $pattern = "/[\s,、]/";
-            $split = preg_split($pattern, $text);
+            if (is_array($text)) {
+                $split = $text;
+            } else {
+                // カンマもしくは空白で分割
+                $pattern = "/[\s,、]/";
+                $split = preg_split($pattern, $text);
+            }
 
             // キーワードリストに存在するか
             $keyword = json_decode($app['keyword'], true);
