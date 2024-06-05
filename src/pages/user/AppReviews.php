@@ -60,7 +60,7 @@
 </button>
 
 <!-- モーダルの内容 -->
-<form action="../../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post">
+<form action="../../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post" id="AppReviews-form">
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -93,10 +93,10 @@
           <?php } ?>
         </div>
         <div class="AppReviews-subtitle"><h4>レビュー</h4></div>
-        <div><textarea class="AppReviews-review" name="content" placeholder="入力してください"></textarea></div>
+        <div><textarea class="AppReviews-review" name="content" id="AppReviews-reviewarea" placeholder="入力してください"></textarea></div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="AppReviews-post" data-bs-dismiss="modal" aria-label="Close">投稿する</button>
+        <button type="button" class="AppReviews-post" data-bs-dismiss="modal" aria-label="Close" onclick="reviewCheck(<?php echo $appId; ?>)">投稿する</button>
       </div>
     </div>
   </div>
