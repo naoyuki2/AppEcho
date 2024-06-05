@@ -78,17 +78,21 @@ if (!empty($_SERVER['QUERY_STRING'])) { // getパラメーターの存在チェ�
     $params = -1;
 }
 
+$sortFlg = false;
+
 if ($params == -1) {
     $AppList = getAppList();    // getパラメータがなければ全件表示
 } else if (!empty($params) && !empty($params[0]) && empty($params['app'])) {
     $AppList = getAppListByParams($before);
     $tagFlg = true; // 検索パラメーターが存在する場合のみタグを表示
+
+    if (!empty($params['sort'])) $sortFlg = true;
+} else if (!empty($params['sort'])) {
+    $AppList = getAppList();
+    $sortFlg = true;
+    $tagFlg = true;
 } else {
-    if ($params['app'] == -1) {
-        $AppList = getAppList();    // appが-1の場合は全件表示
-    } else {
-        $AppList = 0;   // appが0の場合は該当なし
-    }
+    $params['app'] == -1 ? $AppList = getAppList() : $AppList = 0;
 }
 
 if ($AppList == 0) {
@@ -105,63 +109,111 @@ if ($AppList == 0) {
                         <?php
                         if ($textFlg) {
                         ?>
-                            <div class="AppList-fl-left">
-                                <?php
-                                $textCnt = 0;
-                                for ($i = 0; $i < count($split); $i++) {
-                                    if ($split[$i] !== "") {
-                                ?>
+                            <?php
+                            $textCnt = 0;
+                            for ($i = 0; $i < count($split); $i++) {
+                                if ($split[$i] !== "") {
+                            ?>
+                                    <div class="AppList-fl-left">
                                         <input type="hidden" name="AppName[]" value="<?php echo $split[$i] ?>" class="AppList-btn-text">
                                         <button type="button" class="AppList-btn" onclick="textCancel(<?php echo $textCnt ?>)">
                                             <?php echo $split[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                         </button>
-                                <?php
-                                        $textCnt++;
-                                    }
+                                    </div>
+                            <?php
+                                    $textCnt++;
                                 }
-                                ?>
-                            </div>
-                        <?php
+                            }
                         }
                         if ($categoryFlg) {
-                        ?>
-                            <div class="AppList-fl-left">
-                                <?php
-                                for ($i = 0; $i < count($categories); $i++) {
-                                ?>
+                            ?>
+                            <?php
+                            for ($i = 0; $i < count($categories); $i++) {
+                            ?>
+                                <div class="AppList-fl-left">
                                     <input type="hidden" name="category[]" value="<?php echo $categories[$i] ?>" class="AppList-btn-category">
                                     <button type="button" class="AppList-btn" onclick="categoryCancel(<?php echo $i ?>)">
                                         <?php echo $categories[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                     </button>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <?php
+                        if ($starFlg) {
+                        ?>
+                            <?php
+                            for ($i = 0; $i < count($stars); $i++) {
+                            ?>
+                                <div class="AppList-fl-left">
+                                    <input type="hidden" name="star[]" value="<?php echo $stars[$i] ?>" class="AppList-btn-star">
+                                    <button type="button" class="AppList-btn" onclick="starCancel(<?php echo $i ?>)">
+                                        <i class=" fa-regular fa-star AppList-icon" style="color: #4b4b4b"></i>
+                                        <?php echo $stars[$i] ?>
+                                        <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                    </button>
+                                </div>
+                            <?php
+                            }
+                        }
+                        if ($sortFlg) {
+                            ?>
+                            <div class="AppList-fl-left">
                                 <?php
+                                switch ($_GET['sort']) {
+                                    case 0:
+                                        break;
+                                    case 1:
+                                        usort($AppList, function ($row, $high) {
+                                            return $high['star'] <=> $row['star'];
+                                        });
+                                ?>
+                                        <button type="submit" class="AppList-btn">
+                                            評価が高い順
+                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        </button>
+                                    <?php
+                                        break;
+                                    case 2:
+                                        usort($AppList, function ($row, $high) {
+                                            return $row['star'] <=> $high['star'];
+                                        });
+                                    ?>
+                                        <button type="submit" class="AppList-btn">
+                                            評価が低い順
+                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        </button>
+                                    <?php
+                                        break;
+                                    case 3:
+                                        usort($AppList, function ($row, $high) {
+                                            return $high['upload_date'] <=> $row['upload_date'];
+                                        });
+                                    ?>
+                                        <button type="submit" class="AppList-btn">
+                                            新しい順
+                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        </button>
+                                    <?php
+                                        break;
+                                    case 4:
+                                        usort($AppList, function ($row, $high) {
+                                            return $row['upload_date'] <=> $high['upload_date'];
+                                        });
+                                    ?>
+                                        <button type="submit" class="AppList-btn">
+                                            古い順
+                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        </button>
+                                <?php
+                                        break;
                                 }
                                 ?>
                             </div>
                         <?php
                         }
                         ?>
-                        <div class="AppList-fl-left">
-                            <?php
-                            if ($starFlg) {
-                            ?>
-                                <div class="AppList-fl-left">
-                                    <?php
-                                    for ($i = 0; $i < count($stars); $i++) {
-                                    ?>
-                                        <input type="hidden" name="star[]" value="<?php echo $stars[$i] ?>" class="AppList-btn-star">
-                                        <button type="button" class="AppList-btn" onclick="starCancel(<?php echo $i ?>)">
-                                            <i class=" fa-regular fa-star AppList-icon" style="color: #4b4b4b"></i>
-                                            <?php echo $stars[$i] ?>
-                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
-                                        </button>
-                                    <?php
-                                    }
-                                    ?>
-                                </div>
-                            <?php
-                            }
-                            ?>
-                        </div>
                         <div class="AppList-fl-right">
                             <button type="button" class="AppList-btn-reset" onclick="allClear()">絞り込み解除</button>
                         </div>
@@ -169,7 +221,6 @@ if ($AppList == 0) {
                     <?php
                 }
                     ?>
-                    </form>
                 </div>
             </div>
         </div>
@@ -178,16 +229,19 @@ if ($AppList == 0) {
             foreach ($AppList as $app) {
             ?>
                 <div class="AppList_content">
-                    <a href=AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
+                    <a href="AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
                     <p class="AppList_p"><?php echo $app['name'] ?></p>
                 </div>
-        <?php
+            <?php
             }
-        }
+            ?>
+            </form>
+        <?php
+    }
         ?>
 
         </div>
         <script src="../../features/AppList/AppList.js"></script>
-    <?php
-    require_once dirname(__FILE__, 3) . '/components/Footer.php';
-    ?>
+        <?php
+        require_once dirname(__FILE__, 3) . '/components/Footer.php';
+        ?>
