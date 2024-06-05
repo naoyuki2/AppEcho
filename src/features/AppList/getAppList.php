@@ -5,13 +5,13 @@ function getAppList()
 {
     global $pdo;
     $sql = $pdo->query('
-            SELECT app.id, app.name, app.image_url, app.keyword, category.name AS category_name, ROUND(AVG(review.star)) AS star
+            SELECT app.id, app.name, app.image_url, app.keyword, app.upload_date, category.name AS category_name, ROUND(AVG(review.star)) AS star
             FROM app
             INNER JOIN category
             ON app.category_id = category.id
             LEFT JOIN review
             ON app.id = review.app_id
-            GROUP BY app.id, app.name, app.image_url, app.keyword, category_name
+            GROUP BY app.id, app.name, app.image_url, app.keyword, app.upload_date, category_name
         ');
     return $sql->fetchAll();
 }
@@ -33,14 +33,14 @@ function getAppListByParams($params)
 
         global $pdo;
         $sql = $pdo->prepare("
-            SELECT app.id, app.name, app.image_url, app.keyword, category.name AS category_name, ROUND(AVG(review.star)) AS star
+            SELECT app.id, app.name, app.image_url, app.keyword, app.upload_date, category.name AS category_name, ROUND(AVG(review.star)) AS star
             FROM app
             INNER JOIN category
             ON app.category_id = category.id
             LEFT JOIN review
             ON app.id = review.app_id
             WHERE app.id IN ($placeholders)
-            GROUP BY app.id, app.name, app.image_url, app.keyword, category_name
+            GROUP BY app.id, app.name, app.image_url, app.keyword, app.upload_date, category_name
         ");
 
         $sql->execute($flatArray);  // 配列を$placeholdersに渡す
