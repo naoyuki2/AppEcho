@@ -29,6 +29,8 @@
             <div class="Header-div"></div>
 
             <?php
+                // セッション情報の読み込み
+                session_start();
                 // 管理者フラグ
                 $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
             ?>
