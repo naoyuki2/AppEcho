@@ -2,10 +2,11 @@
 require_once dirname(__FILE__, 3) . '/components/Header.php';
 require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
 $Tags = getTag();
-
+$appId = $_GET['appId'];
 ?>
 
-<form action="#" method="post">
+<form action="AppReviews.php" method="GET">
+    <input type="hidden" name="appId" id="appId" value="<?php echo $appId ?>">
     <div class="AppFilter-wrap">
 
         <!-- タグ -->
@@ -17,7 +18,7 @@ $Tags = getTag();
                 foreach ($Tags as $tag) {
                 ?>
                     <div class="AppFilter-category">
-                        <input type="checkbox" name="category" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tag['id'] ?>" autocomplete="off" value="<?php $tag['id'] ?>">
+                        <input type="checkbox" name="tagId" class="btn-check" id="AppFilter-checkbox-category-<?php echo $tag['id'] ?>" autocomplete="off" value="<?php echo $tag['id'] ?>">
                         <label class="btn btn-outline-secondary AppFilter-tagBtn" for="AppFilter-checkbox-category-<?php echo $tag['id'] ?>"><?php echo $tag['name'] ?></label>
                         <input type="hidden" value="<?php echo $tag['color'] ?>" class="AppFilter-tag">
                     </div>
