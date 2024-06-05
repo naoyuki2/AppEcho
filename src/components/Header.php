@@ -34,7 +34,6 @@
                 // 管理者フラグ
                 $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
             ?>
-                    
             <div class="admin"> 
                 <a href="#"><?php echo $isAdmin ? '管理者' : ''; ?></a>
             </div>
