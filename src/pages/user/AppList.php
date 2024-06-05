@@ -101,7 +101,7 @@ if ($AppList == 0) {
         <div class="AppList-filta">
             <div class="AppList-input">
                 <div class="AppList-category">
-                    <form action="../features/AppSearch/AppChoice.php" method="post" name="tagForm">
+                    <form action="../../features/AppSearch/AppChoice.php" method="post" name="tagForm">
                         <?php
                         if ($textFlg) {
                         ?>
