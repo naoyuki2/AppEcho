@@ -36,7 +36,7 @@ function reviewCheck(id){
     var flag2 = false;
     var star = document.getElementsByName('star');
     var tag = document.getElementsByName('tagId');
-    var text = document.getElementById('reviewarea');
+    var text = document.getElementById('AppReviews-reviewarea');
 
     for(var i = 0; i < star.length;i++){
         if(star.item(i).checked){
