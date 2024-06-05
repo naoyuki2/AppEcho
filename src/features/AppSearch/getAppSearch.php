@@ -1,7 +1,7 @@
 <?php
 require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 
-function getAppSearch($text, $category, $star)
+function getAppSearch($text, $category, $star, $sort)
 {
     global $pdo;
     $sql = $pdo->query('
@@ -66,7 +66,11 @@ function getAppSearch($text, $category, $star)
     $appId = [];
 
     if ($text == 0 && $category == 0  && $star == 0) {
-        return -1;
+        if ($sort != 0) {
+            return "sort";
+        } else {
+            return -1;
+        }
     } else {
         if ($cnt['app_text']) {
             $intersection = $appId_text;
