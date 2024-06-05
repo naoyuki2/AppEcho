@@ -30,3 +30,41 @@ function tagBgChange(id){
         }
     }
 }
+
+function reviewCheck(id){
+    var flag1 = false;
+    var flag2 = false;
+    var star = document.getElementsByName('star');
+    var tag = document.getElementsByName('tagId');
+    var text = document.getElementById('reviewarea');
+
+    for(var i = 0; i < star.length;i++){
+        if(star.item(i).checked){
+            flag1 = true;
+        }
+    }
+
+    for(var j = 0; j < tag.length;j++){
+        if(tag.item(j).checked){
+            flag2 = true;
+        }
+    }
+
+    if(!flag1 || !flag2 || text.value==""){
+        alert("未入力の項目があります！");
+    }else{
+        var form = document.getElementById('AppReviews-form');
+        var formData = new FormData(form);
+        var action = form.getAttribute("action");
+        var options = {
+            method: 'POST',
+            body:formData,
+        }
+        fetch(action,options).then((e) => {
+            if(e.status === 200){
+                location.href = "AppReviews.php?appId="+id;
+                return
+            }
+        })
+    }
+}
