@@ -11,9 +11,10 @@
         <br>
     <?php } ?>
 
-    <!-- モーダル -->
-    <form action="../../features/AppCategory/postTag.php" method="post">
-        <input type="text" name="tag_name">
+    <!-- タグ追加モーダル -->
+    <form action="../../features/AppTag/postTag.php" method="post">
+        <input type="text" name="tag_name"> <br>
+        <input type="color" name="tag_color" value="e66465" /> <br>
         <button type="submit">追加</button>
     </form>
     
