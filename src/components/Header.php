@@ -32,7 +32,7 @@ $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
         </div>
         <div class="Header-center">
             <div class="Header-logo">
-                <a href="./AppList.php"><img src="../../../img/logo.png"></a>
+                <a href="<?php echo $isAdmin ? './AppList.php' : '../user/AppList.php'; ?>"><img src="../../../img/logo.png"></a>
             </div>
         </div>
         <div class="Header-div"></div>
