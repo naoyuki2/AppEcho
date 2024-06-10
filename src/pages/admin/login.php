@@ -8,7 +8,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === false) {
 }
 ?>
 
-<form action="../../features/auth/admin.php" method="post">
+<form action="../../features/auth/admin.php?id=1" method="post">
     <input type="password" name="password">
     <button type="submit">ログイン</button>
 </form>
