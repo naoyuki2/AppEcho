@@ -4,18 +4,18 @@ require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 // PDOオブジェクトの設定
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-postCategory($_POST['category_name']);
-header('Location:../../pages/admin/CategoryList.php');
+postTag($_POST['tag_name']);
+header('Location:../../pages/admin/TagList.php');
 exit();
 
-function postCategory($category_name) {
+function postTag($tag_name) {
     try {
         global $pdo;
         $sql = $pdo->prepare('
-            INSERT INTO category(name)
+            INSERT INTO tag(name)
             VALUES (?)
         ');
-        $result = $sql->execute([$category_name]);
+        $result = $sql->execute([$tag_name]);
 
         if (!$result) {
             echo "Insert failed!";
