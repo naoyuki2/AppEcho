@@ -11,19 +11,10 @@
     }
     $Reviews = [];
     if(isset($tagId) && isset($star)) {
-        foreach($tagId as $tagid){
-            ?><p><?php echo $tagid ?><?php
-        }
-        foreach($star as $stars){
-            ?><p><?php echo $stars ?><?php
-        }
         $Reviews = getReviewsbytast($appId,$tagId,$star);
     } else if (isset($tagId)){
         $Reviews = getReviewsbyta($appId,$tagId);
     } else if(isset($star)){
-        foreach($star as $stars){
-            ?><p><?php echo $stars ?><?php
-        }
         $Reviews = getReviewsbyst($appId,$star);
     } else {
         $Reviews = getReviews($appId);
