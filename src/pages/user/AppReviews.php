@@ -3,7 +3,22 @@
     require_once dirname(__FILE__, 3) . '/features/AppReviews/getReviews.php';
     require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
     $appId = $_GET['appId'];
-    $Reviews = getReviews($appId);
+    if(isset($_GET['tagId'])){
+        $tagId = $_GET['tagId'];
+    }
+    if(isset($_GET['star'])){
+        $star = $_GET['star'];
+    }
+    $Reviews = [];
+    if(isset($tagId) && isset($star)) {
+        $Reviews = getReviewsbytast($appId,$tagId,$star);
+    } else if (isset($tagId)){
+        $Reviews = getReviewsbyta($appId,$tagId);
+    } else if(isset($star)){
+        $Reviews = getReviewsbyst($appId,$star);
+    } else {
+        $Reviews = getReviews($appId);
+    }
     $GetTags = getTag();
 ?>
 
@@ -24,7 +39,7 @@
             </div>
             <div class="AppReviews-fl-right">
                 <div class="AppReviews-fi-a">
-                    <a href="AppReviewFilter.php"><i class="fa-solid fa-filter fa-2x"></i></a>
+                    <a href="AppReviewFilter.php?appId=<?php echo $appId ?>"><i class="fa-solid fa-filter fa-2x"></i></a>
                 </div>
             </div>
             <div class="AppReviews-fl-right">
@@ -37,14 +52,21 @@
 
 <?php foreach($Reviews as $review){ ?>
     <div class="AppReviews-box">
+        <form action="AppReviews.php" method="GET">
+
         <span class="AppReviews-number">No.<?php echo $review['id'] ?></span>
         <span class="AppReviews-point"><i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <?php echo $review['star'] ?>
         </span>
-        <span class="AppReviews-tag" style="color: #<?php echo $review['tag_color'] ?>;
+
+        <input type="hidden" name="appId" id="appId" value="<?php echo $appId ?>">
+        <input type="hidden" name="tagId" id="tagId" value="<?php echo $tagId?>">
+        <button class="AppReviews-tag" style="color: #<?php echo $review['tag_color'] ?>;
         border-color: #<?php echo $review['tag_color'] ?>;">
-            <?php echo $review['tag_name'] ?>
-        </span>
+        <?php echo $review['tag_name'] ?>
+        </button>
+        </form>
+        
         <p class="AppReviews-comment">
             <?php echo nl2br($review['content']) ?>
         </p>
