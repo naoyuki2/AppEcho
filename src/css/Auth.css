@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.Auth-wrap {
+    margin: 1.5rem .5rem;
+}
+
+.Auth-nav {
+    --bs-nav-link-color: #4b4b4b;
+    --bs-nav-link-hover-color: #4b4b4b;
+    --bs-nav-tabs-border-color: #4b4b4b;
+    --bs-nav-tabs-link-hover-border-color: #3EA632;
+    --bs-nav-tabs-link-active-color: #3EA632;
+    --bs-nav-tabs-link-active-border-color: #3EA632;
+}
+
+.Auth-tab-content {
+    margin-top: 3rem;
+}
+
+.Auth-inputContent {
+    margin-bottom: 1.5rem;
+}
+
+.Auth-label {
+    text-align: center;
+    margin: .5rem;
+}
+
+.Auth-email, .Auth-password, .Auth-text {
+    font-size: .8rem;
+    display: flex;
+    margin: 0 auto;
+}
+
+.Auth-submit {
+    display: flex;
+    margin: 4rem auto;
+}
