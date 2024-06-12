@@ -21,6 +21,7 @@ $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
     <link rel="stylesheet" href="../../css/AppSearch.css">
     <link rel="stylesheet" href="../../css/AppReviewFilter.css">
     <link rel="stylesheet" href="../../css/AppReviews-modal.css">
+    <link rel="stylesheet" href="../../css/Auth.css">
 </head>
 
 <body>
