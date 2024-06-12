@@ -4,19 +4,6 @@
     $AppCategory = getAppCategory();
 ?>
 
-    <!-- カテゴリ一覧表示 -->
-    <h1>カテゴリ一覧</h1>
-    <?php foreach($AppCategory as $category){ ?>
-        <p><?php echo $category['name'] ?></p>
-        <br>
-    <?php } ?>
-
-    <!-- カテゴリ追加モーダル -->
-    <form action="../../features/AppCategory/postCategory.php" method="post">
-        <input type="text" name="category_name" required>
-        <button type="submit">追加</button>
-    </form>
-
     <!-- アプリ投稿フォーム -->
     <h2>アプリ投稿</h2>
     <form action="../../features/App/postApp.php" method="POST" enctype="multipart/form-data">
@@ -24,7 +11,7 @@
         <input type="text" id="app_name" name="app_name" maxlength="20" required><br>
         
         <label for="app_icon">アプリアイコン:</label>
-        <input type="file" id="app_icon" name="app_icon" required><br>
+        <input type="text" id="app_icon" name="app_icon" required><br>
 
         <label for="app_description">アプリ説明:</label>
         <textarea id="app_description" name="app_description" maxlength="140" required></textarea><br>

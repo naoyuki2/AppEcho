@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $_FILES['app_icon'],
         $_POST['app_description'],
         $_POST['store_link'],
+        $_POST['store_link'],
         $_POST['app_category'],
         $_POST['search_keywords']
     );
