@@ -53,14 +53,13 @@
 <?php foreach($Reviews as $review){ ?>
     <div class="AppReviews-box">
         <form action="AppReviews.php" method="GET">
-
         <span class="AppReviews-number">No.<?php echo $review['id'] ?></span>
         <span class="AppReviews-point"><i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <?php echo $review['star'] ?>
         </span>
 
         <input type="hidden" name="appId" id="appId" value="<?php echo $appId ?>">
-        <input type="hidden" name="tagId" id="tagId" value="<?php echo $tagId?>">
+        <input type="hidden" name="tagId[]" id="tagId[]" value="<?php echo $review['tag_id']?>">
         <button class="AppReviews-tag" style="color: #<?php echo $review['tag_color'] ?>;
         border-color: #<?php echo $review['tag_color'] ?>;">
         <?php echo $review['tag_name'] ?>
