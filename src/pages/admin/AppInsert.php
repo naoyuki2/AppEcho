@@ -9,7 +9,7 @@ $AppCategory = getAppCategory();
 <form action="../../features/App/postApp.php" method="POST" enctype="multipart/form-data">
     <label for="app_name">アプリ名:</label>
     <input type="text" id="app_name" name="app_name" maxlength="20" required><br>
-    
+
     <label for="app_icon">アプリアイコン:</label>
     <input type="file" id="app_icon" name="app_icon" required><br>
 
