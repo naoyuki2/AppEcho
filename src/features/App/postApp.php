@@ -32,7 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         postApp($app_name, $upload_file, $app_description, $app_link, $play_link, $app_category, $search_keywords);
     } else {
-        die("ファイルアップロードエラー。");
+        // エラーメッセージの詳細を取得
+        $upload_errors = [
+            UPLOAD_ERR_INI_SIZE   => "The uploaded file exceeds the upload_max_filesize directive in php.ini.",
+            UPLOAD_ERR_FORM_SIZE  => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.",
+            UPLOAD_ERR_PARTIAL    => "The uploaded file was only partially uploaded.",
+            UPLOAD_ERR_NO_FILE    => "No file was uploaded.",
+            UPLOAD_ERR_NO_TMP_DIR => "Missing a temporary folder.",
+            UPLOAD_ERR_CANT_WRITE => "Failed to write file to disk.",
+            UPLOAD_ERR_EXTENSION  => "A PHP extension stopped the file upload.",
+        ];
+        $error_message = $upload_errors[$_FILES['app_icon']['error']] ?? "Unknown upload error.";
+        die("ファイルアップロードエラー: $error_message");
     }
 
     header('Location: ../../pages/admin/AppInsert.php');
@@ -74,3 +85,4 @@ function postApp($app_name, $app_icon_path, $app_description, $app_link, $play_l
         die("エラー：何かが間違っています。後で再試行してください。");
     }
 }
+?>
