@@ -69,4 +69,18 @@ require_once dirname(__FILE__, 4) . '/config/db_connect.php';
         $sql->execute($star);
         return $sql->fetchAll();
     }
+
+    function getTagname($tagId){
+
+        $tags = implode(',', array_fill(0, count($tagId), '?'));
+
+        global $pdo;
+        $sql = $pdo->prepare("
+            SELECT *
+            FROM tag 
+            WHERE id IN ($tags)
+        ");
+        $sql->execute($tagId);
+        return $sql->fetchAll();
+    }
 ?>
