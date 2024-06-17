@@ -11,7 +11,7 @@ $AppCategory = getAppCategory();
     <input type="text" id="app_name" name="app_name" maxlength="20" required><br>
 
     <label for="app_icon">アプリアイコン:</label>
-    <input type="file" id="app_icon" name="app_icon" required><br>
+    <input type="text" id="app_icon" name="app_icon" required><br>
 
     <label for="app_description">アプリ説明:</label>
     <textarea id="app_description" name="app_description" maxlength="140" required></textarea><br>
