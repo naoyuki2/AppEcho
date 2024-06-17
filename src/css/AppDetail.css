@@ -20,6 +20,8 @@
 }
 
 .AppDetail-foot{
+    display: flex;
+    justify-content: center;
     padding-top: 1.2rem;
 }
 
@@ -37,11 +39,25 @@
 }
 
 .AppDetail-fl-left{
-    float: left;
+    position: absolute;
+    left: 0;
 }
 
 .AppDetail-fl-right{
-    float: right;
+    position: absolute;
+    right: 0;
+}
+
+.AppDetail-update-botm{
+    padding-top: 1.5rem;
+}
+
+.AppDetail-update{
+    border-radius: 25px;
+    background-color: #fafafa;
+    border:2px solid #4b4b4b;
+    color: #4b4b4b;
+    padding: .1rem 1rem;
 }
 
 .AppDetail-pad-botm{
