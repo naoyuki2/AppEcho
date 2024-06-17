@@ -6,12 +6,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 入力を検証およびサニタイズ
-    $app_name = filter_input(INPUT_POST, 'app_name', FILTER_SANITIZE_STRING);
-    $app_description = filter_input(INPUT_POST, 'app_description', FILTER_SANITIZE_STRING);
+    $app_name = filter_input(INPUT_POST, 'app_name', FILTER_SANITIZE_SPECIAL_CHARS);
+    $app_description = filter_input(INPUT_POST, 'app_description', FILTER_SANITIZE_SPECIAL_CHARS);
     $app_link = filter_input(INPUT_POST, 'app_link', FILTER_SANITIZE_URL);
     $play_link = filter_input(INPUT_POST, 'play_link', FILTER_SANITIZE_URL);
     $app_category = filter_input(INPUT_POST, 'app_category', FILTER_VALIDATE_INT);
-    $search_keywords = filter_input(INPUT_POST, 'search_keywords', FILTER_SANITIZE_STRING);
+    $search_keywords = filter_input(INPUT_POST, 'search_keywords', FILTER_SANITIZE_SPECIAL_CHARS);
 
     // ファイルアップロードの処理
     if (isset($_FILES['app_icon']) && $_FILES['app_icon']['error'] == UPLOAD_ERR_OK) {
@@ -74,4 +74,3 @@ function postApp($app_name, $app_icon_path, $app_description, $app_link, $play_l
         die("エラー：何かが間違っています。後で再試行してください。");
     }
 }
-?>
