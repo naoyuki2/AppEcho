@@ -12,8 +12,10 @@
     $Reviews = [];
     if(isset($tagId) && isset($star)) {
         $Reviews = getReviewsbytast($appId,$tagId,$star);
+        $tagname = getTagname($tagId);
     } else if (isset($tagId)){
         $Reviews = getReviewsbyta($appId,$tagId);
+        $tagname = getTagname($tagId);
     } else if(isset($star)){
         $Reviews = getReviewsbyst($appId,$star);
     } else {
@@ -25,25 +27,42 @@
 <div class="AppReviews-fi">
     <div class="AppReviews-input">
         <div class="AppReviews-category">
-            <div class="AppReviews-fl-left">
-                <button class="AppReviews-btn">
-                    感想<i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
-                </button>
-            </div>
-            <div class="AppReviews-fl-left">
-                <button class="AppReviews-btn">
-                    <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
-                    5
-                    <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
-                </button>
-            </div>
-            <div class="AppReviews-fl-right">
+            <!-- タグフィルタ -->
+            <?php
+            if(isset($tagId)){
+                foreach($tagname as $tag){
+                    ?>
+                    <div class="AppReviews-fl-left">
+                        <button class="AppReviews-btn">
+                            <?php echo $tag['name'] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                        </button>
+                    </div>
+                    <?php
+                }
+            }?>
+            <!-- 星フィルタ -->
+            <?php
+            if(isset($star)){
+                foreach($star as $stars){
+                    ?>
+                    <div class="AppReviews-fl-left">
+                        <button class="AppReviews-btn">
+                            <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
+                            <?php echo $stars ?>
+                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                        </button>
+                    </div>
+                    <?php
+                }
+            } 
+            ?>
+            <div class="AppReviews-fl-right-i">
                 <div class="AppReviews-fi-a">
                     <a href="AppReviewFilter.php?appId=<?php echo $appId ?>"><i class="fa-solid fa-filter fa-2x"></i></a>
                 </div>
             </div>
             <div class="AppReviews-fl-right">
-                <button class="AppReviews-btn-reset">絞り込み解除</button>
+                <a class="AppReviews-btn-reset" href="AppReviews.php?appId=<?php echo $appId ?>">絞り込み解除</a>
             </div>
             <div class="AppReviews-fl-clear"></div>
         </div>
