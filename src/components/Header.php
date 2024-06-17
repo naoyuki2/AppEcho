@@ -25,17 +25,23 @@ $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 
 <body>
     <header>
+
         <div class="Header-left">
             <div class="Header-search">
                 <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
         </div>
+
         <div class="Header-center">
             <div class="Header-logo">
                 <a href="<?php echo $isAdmin ? '../user/AppList.php' : './AppList.php'; ?>"><img src="../../../img/logo.png"></a>
             </div>
         </div>
-        <div class="Header-div"></div>
+
+        <div class="Header-user">
+            <a href="#"><img class = "Header-user-icon" src="../../../img/user.png"></a>
+        </div>
+
         <div class="admin">
             <a href="#"><?php echo $isAdmin ? '管理者' : ''; ?></a>
         </div>

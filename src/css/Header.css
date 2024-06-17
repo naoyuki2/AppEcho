@@ -34,5 +34,8 @@ header {
 
 .Header-div{
     padding: 20px;
+}
 
+.Header-user-icon{
+    width: 35px;
 }
