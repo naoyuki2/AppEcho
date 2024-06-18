@@ -28,7 +28,7 @@ function getAppSearch($text, $category, $star, $sort)
                 $split = $text;
             } else {
                 // カンマもしくは空白で分割
-                $pattern = "/[\s,、]/";
+                $pattern = "/[\s,、]/u";
                 $split = preg_split($pattern, $text);
             }
 
