@@ -95,6 +95,13 @@ foreach ($AppDetail as $detail) {
                         <i class="fa-regular fa-comment fa-2x" style="color: #4b4b4b;"></i>
                     </a>
                 </div>
+                <div class="AppDetail-fl-center">
+                    <div class="AppDetail-update-botm">
+                        <form action="../admin/AppUpdate.php?appId=<?php echo $appId ?>" method="post">
+                            <input type="submit" value="編集" class="AppDetail-update">
+                        </form>
+                    </div>
+                </div>
                 <div class="AppDetail-fl-right">
                     <div class="AppDetail-pad-botm">
                         <form action="../../features/AppSearch/AppChoice.php" method="post">
