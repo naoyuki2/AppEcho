@@ -12,42 +12,51 @@
 
     <div class="tab-content Auth-tab-content">
         <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab-pane" tabindex="0">
-            <form action="#" method="post">
+            <form action="#" method="post" name="login">
                 <div class="Auth-inputContent">
                     <p class="Auth-label">メールアドレス</p>
-                    <input type="email" name="email" class="Auth-email" size="30">
+                    <input type="email" name="email" class="Auth-email Auth-loginInput" size="30">
                 </div>
 
                 <div class="Auth-inputContent">
                     <p class="Auth-label">パスワード</p>
-                    <input type="password" name="password" class="Auth-password" size="30">
+                    <input type="password" name="password" class="Auth-password Auth-loginInput" id="Auth-login-password" size="30">
+                    <span class="far fa-eye" id="Auth-login-buttonEye" onclick="loginHidePass()"></span>
                 </div>
 
-                <button type="submit" class="btn btn-outline-success Auth-submit">ログイン</button>
+                <button type="button" class="btn btn-outline-success Auth-submit" onclick="loginSend()">ログイン</button>
             </form>
         </div>
 
         <div class="tab-pane fade" id="signUp-tab-pane" role="tabpanel" aria-labelledby="signUp-tab-pane" tabindex="0">
-            <form action="#" method="post">
+            <form action="#" method="post" name="signUp">
                 <div class="Auth-inputContent">
                     <p class="Auth-label">ユーザーネーム</p>
-                    <input type="text" name="text" class="Auth-text" size="30">
+                    <input type="text" name="text" class="Auth-text Auth-signUpInput" id="Auth-signUp-name" size="30" placeholder="20文字以内">
                 </div>
 
                 <div class="Auth-inputContent">
                     <p class="Auth-label">メールアドレス</p>
-                    <input type="email" name="email" class="Auth-email" size="30">
+                    <input type="email" name="email" class="Auth-email Auth-signUpInput" id="Auth-signUp-mail" size="30">
                 </div>
 
                 <div class="Auth-inputContent">
                     <p class="Auth-label">パスワード</p>
-                    <input type="password" name="password" class="Auth-password" size="30">
+                    <input type="password" name="password" class="Auth-password Auth-signUpInput" id="Auth-signUp-password" size="30" placeholder="半角英数8文字以上">
+                    <span class="far fa-eye" id="Auth-signUp-buttonEye" onclick="signUpHidePass()"></span>
                 </div>
 
-                <button type="submit" class="btn btn-outline-success Auth-submit">新規登録</button>
+                <div class="Auth-inputContent">
+                    <p class="Auth-signUpError" id="Auth-signUp-mailError"></p>
+                    <p class="Auth-signUpError" id="Auth-signUp-passwordError"></p>
+                </div>
+
+                <button type="button" class="btn btn-outline-success Auth-submit" onclick="signUpSend()">新規登録</button>
             </form>
         </div>
     </div>
 </div>
+
+<script src="../../features/auth/userAuth.js"></script>
 
 <?php require_once dirname(__FILE__, 3) . '/components/Footer.php' ?>
