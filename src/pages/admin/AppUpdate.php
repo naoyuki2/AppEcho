@@ -50,9 +50,9 @@ foreach ($AppDetail as $appdetail) {
                 ?>
                     <div class="AppUpdate-category">
                         <?php if($appdetail['category_id'] == $category['id']){ ?>
-                            <input type="radio" name="AppCategory" class="btn-check AppUpdate-btnCheck" id="AppUpdate-radio-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['name'] ?>" checked>
+                            <input type="radio" name="AppCategory" class="btn-check AppUpdate-btnCheck" id="AppUpdate-radio-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['id'] ?>" checked>
                         <?php }else{ ?>
-                            <input type="radio" name="AppCategory" class="btn-check AppUpdate-btnCheck" id="AppUpdate-radio-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['name'] ?>">
+                            <input type="radio" name="AppCategory" class="btn-check AppUpdate-btnCheck" id="AppUpdate-radio-category-<?php echo $category['id'] ?>" autocomplete="off" value="<?php echo $category['id'] ?>">
                         <?php } ?>
                         <label class="btn btn-outline-primary AppUpdate-btn" for="AppUpdate-radio-category-<?php echo $category['id'] ?>"><?php echo $category['name'] ?></label>
                     </div>
