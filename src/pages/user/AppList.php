@@ -46,7 +46,7 @@ if (!empty($_SERVER['QUERY_STRING'])) { // getパラメーターの存在チェ�
         if (is_array($_GET['text'])) {
             $split = $_GET['text'];
         } else {
-            $pattern = "/[\s,、]/";
+            $pattern = "/[\s,、]/u";
             $split = preg_split($pattern, $_GET['text']);
         }
         $textFlg = true;
