@@ -46,12 +46,20 @@
     color: red;
 }
 
-#Auth-signUp-mailError {
+#Auth-signUp-dbError {
+    position: fixed;
+    left: 50%;
+    font-size: .8rem;
+    color: red;
     transform: translateX(-50%) translateY(-50%);
 }
 
-#Auth-signUp-passwordError {
+#Auth-signUp-mailError {
     transform: translateX(-50%) translateY(60%);
+}
+
+#Auth-signUp-passwordError {
+    transform: translateX(-50%) translateY(170%);
 }
 
 #Auth-login-buttonEye, #Auth-signUp-buttonEye {
