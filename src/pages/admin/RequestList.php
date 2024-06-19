@@ -13,3 +13,7 @@ $allRequest = getRequest();
         <button class="Request-accept" value=1>受理</button>
     </div>
 <?php } ?>
+
+<?php
+    require_once dirname(__FILE__, 3) . '/components/Footer.php';
+?>

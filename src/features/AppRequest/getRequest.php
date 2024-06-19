@@ -9,6 +9,7 @@ function getRequest()
             FROM request
             INNER JOIN user
             ON request.user_id = user.id
+            WHERE status = 0;
         ');
     return $sql->fetchAll();
 }
