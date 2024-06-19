@@ -18,7 +18,9 @@
 }
 
 .Auth-inputContent {
-    margin-bottom: 1.5rem;
+    position: relative;
+    width: fit-content;
+    margin: 1rem auto;
 }
 
 .Auth-label {
@@ -34,5 +36,27 @@
 
 .Auth-submit {
     display: flex;
-    margin: 4rem auto;
+    margin: 5rem auto;
+}
+
+.Auth-signUpError {
+    position: fixed;
+    left: 50%;
+    font-size: .8rem;
+    color: red;
+}
+
+#Auth-signUp-mailError {
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#Auth-signUp-passwordError {
+    transform: translateX(-50%) translateY(60%);
+}
+
+#Auth-login-buttonEye, #Auth-signUp-buttonEye {
+    position: absolute;
+    z-index: 5;
+    left: 87%;
+    top: 67%;
 }
