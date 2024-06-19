@@ -3,6 +3,7 @@
 session_start();
 // 管理者フラグ
 $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+$isUser = isset($_SESSION['user']['image_url']);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
         </div>
 
         <div class="Header-user">
-            <a href="#"><img class = "Header-user-icon" src="../../../img/user.png"></a>
+            <a href="#"><img class="Header-user-icon" src="<?php echo $isUser ? $_SESSION['user']['image_url'] : '' ?>"></a>
         </div>
 
         <div class="admin">
