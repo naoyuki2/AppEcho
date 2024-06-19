@@ -1,0 +1,53 @@
+.Request-box{
+    border-bottom:solid 1px rgba(75,75,75,0.5) ;
+    margin-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.Request-user-info{
+    margin-top: 1rem;
+}
+
+.Request-button{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+}
+
+.Request-dest{
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E37141;
+    border-style: solid;
+    color: #E37141;
+    background-color: #FAFAFA;
+}
+
+.Request-dest:hover{
+    background-color: #E37141;
+    color: #FAFAFA;
+}
+
+.Request-accept{
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3EA632;
+    border-style: solid;
+    color: #3EA632;
+    background-color: #FAFAFA;
+}
+
+.Request-accept:hover{
+    background-color: #3EA632;
+    color: #FAFAFA;
+}
