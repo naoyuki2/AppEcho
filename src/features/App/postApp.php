@@ -34,15 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // エラーメッセージの詳細を取得
         $upload_errors = [
-            UPLOAD_ERR_INI_SIZE   => "The uploaded file exceeds the upload_max_filesize directive in php.ini.",
-            UPLOAD_ERR_FORM_SIZE  => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.",
-            UPLOAD_ERR_PARTIAL    => "The uploaded file was only partially uploaded.",
-            UPLOAD_ERR_NO_FILE    => "No file was uploaded.",
-            UPLOAD_ERR_NO_TMP_DIR => "Missing a temporary folder.",
-            UPLOAD_ERR_CANT_WRITE => "Failed to write file to disk.",
-            UPLOAD_ERR_EXTENSION  => "A PHP extension stopped the file upload.",
+            UPLOAD_ERR_INI_SIZE   => "アップロードされたファイルはphp.iniのupload_max_filesizeディレクティブを超えています。",
+            UPLOAD_ERR_FORM_SIZE  => "アップロードされたファイルはHTMLフォームで指定されたMAX_FILE_SIZEディレクティブを超えています。",
+            UPLOAD_ERR_PARTIAL    => "アップロードされたファイルは一部のみがアップロードされました。",
+            UPLOAD_ERR_NO_FILE    => "ファイルがアップロードされませんでした。",
+            UPLOAD_ERR_NO_TMP_DIR => "一時フォルダがありません。",
+            UPLOAD_ERR_CANT_WRITE => "ディスクへの書き込みに失敗しました。",
+            UPLOAD_ERR_EXTENSION  => "PHP拡張モジュールがファイルのアップロードを停止しました。",
         ];
-        $error_message = $upload_errors[$_FILES['app_icon']['error']] ?? "Unknown upload error.";
+        $error_message = $upload_errors[$_FILES['app_icon']['error']] ?? "不明なアップロードエラーが発生しました。";
         die("ファイルアップロードエラー: $error_message");
     }
 
