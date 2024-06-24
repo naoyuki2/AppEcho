@@ -224,23 +224,62 @@ if ($AppList == 0) {
                 </div>
             </div>
         </div>
-        <div class="AppList_wrap">
-            <?php
-            foreach ($AppList as $app) {
-            ?>
-                <div class="AppList_content">
-                    <a href="AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
-                    <p class="AppList_p"><?php echo $app['name'] ?></p>
+        <div class="flow01 l-section">
+            <div class="l-inner">
+                <div class="swiper-pagination-main"></div>
+                <div class="swiper swiper-main">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="mainslide">
+                                <div class="subslide">
+                                    <div class="AppList_wrap">
+                                        <?php
+                                        $cnt1 = 1;
+                                        $cnt2 = 1;
+                                        foreach ($AppList as $app) {
+                                        ?>
+                                            <div class="AppList_content">
+                                                <a href="AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
+                                                <p class="AppList_p"><?php echo $app['name'] ?></p>
+                                            </div>
+                                            <?php
+                                            if ($cnt1 % 4 == 0) {
+                                            ?>
+                                    </div>
+                                    <div class="AppList_wrap">
+                                    <?php
+                                                $cnt2++;
+                                            }
+                                            if ($cnt2 % 4 == 0) {
+                                    ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="mainslide">
+                                <div class="subslide">
+                                    <div class="AppList_wrap">
+                                <?php
+                                                $cnt2++;
+                                            }
+                                            $cnt1++;
+                                        }
+                                ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
             </form>
         <?php
     }
         ?>
 
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="../../features/AppList/AppList.js"></script>
         <?php
         require_once dirname(__FILE__, 3) . '/components/Footer.php';
