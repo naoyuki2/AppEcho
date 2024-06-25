@@ -15,7 +15,15 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
 
     <div class="tab-content Auth-tab-content">
         <div class="tab-pane fade<?php echo $isSignUp ? '' : 'show active' ?>" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab-pane" tabindex="0">
-            <form action="#" method="post" name="login">
+            <?php
+                if (isset($_SESSION['user']) && $_SESSION['user'] === false) {
+            ?>
+            <p>ログインに失敗しました</p>
+            <?php
+                $_SESSION['user'] = 0;
+                }
+            ?>
+            <form action="../../features/auth/SignIn.php" method="post" name="login">
                 <div class="Auth-inputContent">
                     <p class="Auth-label">メールアドレス</p>
                     <input type="email" name="email" class="Auth-email Auth-loginInput" size="30">
