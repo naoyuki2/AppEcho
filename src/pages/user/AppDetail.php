@@ -4,7 +4,12 @@ require_once dirname(__FILE__, 3) . '/features/AppDetail/getAppDetail.php';
 
 $appId = $_GET['appId'];
 $AppDetail = getAppDetail($appId);
+$loginClass = "";
 ?>
+
+<?php if(!$isAdmin){
+    $loginClass = "-user";
+} ?>
 
 <?php
 foreach ($AppDetail as $detail) {
@@ -98,7 +103,7 @@ foreach ($AppDetail as $detail) {
                 <div class="AppDetail-fl-center">
                     <div class="AppDetail-update-botm">
                         <form action="../admin/AppUpdate.php?appId=<?php echo $appId ?>" method="post">
-                            <input type="submit" value="編集" class="AppDetail-update">
+                            <input type="submit" value="編集" class="AppDetail-update<?php echo $loginClass; ?>">
                         </form>
                     </div>
                 </div>
