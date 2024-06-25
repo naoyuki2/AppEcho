@@ -48,7 +48,7 @@ $isUser = isset($_SESSION['user']['image_url']);
         </div>
 
         <div class="admin">
-            <a href="#"><?php echo $isAdmin ? '管理者' : ''; ?></a>
+            <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
         </div>
 
     </header>
