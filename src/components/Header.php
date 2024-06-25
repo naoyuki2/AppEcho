@@ -44,7 +44,10 @@ $isUser = isset($_SESSION['user']['image_url']);
         </div>
 
         <div class="Header-user">
-            <a href="#"><img class="Header-user-icon" src="<?php echo $isUser ? $_SESSION['user']['image_url'] : '' ?>"></a>
+            <?php echo $isUser 
+             ? '<a href="../user/profile.php"><img class="Header-user-icon" src="'.$_SESSION['user']['image_url'].'"></a>'
+             : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl" style="color: #ffffff;"></i></a>';
+            ?>
         </div>
 
         <div class="admin">
