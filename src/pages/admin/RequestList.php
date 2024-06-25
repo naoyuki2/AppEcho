@@ -13,7 +13,7 @@ $allRequest = getRequest();
         </div>
         <div class="Request-button">
             <button class="Request-dest" value=2 onclick="RequestDest(<?php echo $request['id'] ?>)">破棄</button>
-            <button class="Request-accept" value=1>受理</button>
+            <button class="Request-accept" value=1 onclick="RequestAccept(<?php echo $request['id'] ?>)">受理</button>
         </div>
     </div>
 <?php } ?>
