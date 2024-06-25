@@ -2,33 +2,26 @@
 session_start();
 require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 
-if(isset($_POST['email'])){
-    $mail = $_POST['email'];
-    $email = "'$mail'";
-    $user;
-    login($email);
-    if(empty($user)){
-        $_SESSION['user'] = false;
-        $_SESSION['mail'] = $user['email'];
-        header('Location: ../../pages/user/Auth.php');
-    }else{
-        /*if(isset($_POST['password'])){
-            $saltedPassword = $_POST['password'].$user['salt'];
-            if(password_verify($saltedPassword ,$user['hashed_password']){
-                //$_SESSION['userId'] = $user['id'];
-                //header('Location: ../../pages/user/AppList.php');
-            }else{
-                $_SESSION['user'] = false;
-                header('Location: ../../pages/user/Auth.php');
-            }
-        }*/
-    }
+$isSignIn = false;
+$user = findUserByEmail($_POST['email']);
+$isSignIn = signIn($user);
+
+if($isSignIn){
+    $_SESSION['user'] = [];
+    $_SESSION['user']['id'] = $user['id'];
+    $_SESSION['user']['image_url'] = $user['icon_image_url'];
+    header('Location: ../../pages/user/AppList.php');
 }else{
-    $_SESSION['user'] = false;
+    $_SESSION['signin-error'] = 'メールアドレスまたはパスワードが間違っています';
     header('Location: ../../pages/user/Auth.php');
 }
 
-function login($email){
+function signIn($user){
+    $saltedPassword = $_POST['password'].$user['salt'];
+    if(password_verify($saltedPassword ,$user['hashed_password'])) return true;
+}
+
+function findUserByEmail($email){
     global $pdo;
     $sql = $pdo->prepare("
         SELECT *
@@ -36,5 +29,5 @@ function login($email){
         WHERE email = ?
     ");
     $sql->execute([$email]);
-    $user = $sql->fetchAll();
+    return $sql->fetch();
 }
