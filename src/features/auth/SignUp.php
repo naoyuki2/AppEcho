@@ -33,7 +33,7 @@ try {
 
     $insertSql->execute([$userName, $hashed_password, $salt, $email]);
 } catch (PDOException $e) {
-    $_SESSION['error'] = "エラーが発生しました\n". $e->getMessage();
+    $_SESSION['error'] = "エラーが発生しました";
     header('Location: ../../pages/user/Auth.php?signUp=true');
     exit;
 }
