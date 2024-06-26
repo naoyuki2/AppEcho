@@ -6,14 +6,13 @@ $Reviews=getReviewsByUserId();
 
     foreach($Reviews as $review){ 
         $app=getAppDetail( $review['app_id'] );
-        echo '<pre>';
-        print_r($app);
-        echo '</pre>';
 ?>
     <div class="AppReviews-box">
         <form action="AppReviews.php" method="GET">
-        <span class="AppReviews-number"><?php echo $app['name'] ?></span>
-        <span class="AppReviews-number">No.<?php echo $review['id'] ?></span>
+            <!-- アイコン -->
+                <img src=" <?php echo $app[0]['image_url'] ?>" alt="icon_url" class="icon">
+            <!-- アプリ名 -->
+                <span class="AppReviews-number"><?php echo $app[0]['name'] ?></span>
         <span class="AppReviews-point"><i class="fa-solid fa-star" style="color: #FFD43B;"></i>
             <?php echo $review['star'] ?>
         </span>

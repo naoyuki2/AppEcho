@@ -25,6 +25,7 @@ $isUser = isset($_SESSION['user']['image_url']);
     <link rel="stylesheet" href="../../css/Auth.css">
     <link rel="stylesheet" href="../../css/AppRequest.css">
     <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/ReviewHistory.css">
 </head>
 
 <body>
