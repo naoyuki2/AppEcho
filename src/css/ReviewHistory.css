@@ -1,6 +1,7 @@
 /* アイコン */
 .icon{
     width: 50px;
+    border-radius: 10px;
 }
 
 /* アプリ名 */
@@ -8,3 +9,6 @@
 }
 
 /* レビュー内容 */
+.AppReviews-comment{
+
+}
