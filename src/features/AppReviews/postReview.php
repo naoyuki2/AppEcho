@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 
 // PDOオブジェクトの設定
@@ -8,7 +9,12 @@ $appId = $_GET['appId'];
 $tagId = $_POST['tagId'];
 $content = $_POST['content'];
 $star = $_POST['star'];
-$userId = $_POST['userId'];
+
+if (isset($_SESSION['user']['id'])) {
+    $userId = $_POST['userId'];
+} else {
+    $userId = null;
+}
 
 postReviews($appId, $tagId, $content, $star, $userId);
 header('Location: ../../pages/user/AppReviews.php?appId='.$appId);

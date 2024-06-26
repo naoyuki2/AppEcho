@@ -157,7 +157,6 @@ $users = getUser();
                         <h4>レビュー</h4>
                     </div>
                     <div><textarea class="AppReviews-review" name="content" id="AppReviews-reviewarea" placeholder="入力してください"></textarea></div>
-                    <input type="hidden" name="userId" value="<?php echo isset($userId) ? $userId : null ?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="AppReviews-post" data-bs-dismiss="modal" aria-label="Close" onclick="reviewCheck(<?php echo $appId; ?>)">投稿する</button>
