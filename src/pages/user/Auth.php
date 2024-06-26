@@ -15,7 +15,7 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
 
     <div class="tab-content Auth-tab-content">
         <div class="tab-pane fade<?php echo $isSignUp ? '' : 'show active' ?>" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab-pane" tabindex="0">
-            <form action="#" method="post" name="login">
+            <form action="../../features/auth/SignIn.php" method="post" name="login">
                 <div class="Auth-inputContent">
                     <p class="Auth-label">メールアドレス</p>
                     <input type="email" name="email" class="Auth-email Auth-loginInput" size="30">
@@ -25,6 +25,19 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
                     <p class="Auth-label">パスワード</p>
                     <input type="password" name="password" class="Auth-password Auth-loginInput" id="Auth-login-password" size="30">
                     <span class="far fa-eye" id="Auth-login-buttonEye" onclick="loginHidePass()"></span>
+                </div>
+
+                <div class="Auth-inputContent">
+                    <p id="Auth-signUp-dbError">
+                        <?php
+                        if (isset($_SESSION['signin-error'])) {
+                            echo $_SESSION['signin-error'];
+                            unset($_SESSION['signin-error']);
+                        }
+                        ?>
+                    </p>
+                    <p class="Auth-signUpError" id="Auth-signUp-mailError"></p>
+                    <p class="Auth-signUpError" id="Auth-signUp-passwordError"></p>
                 </div>
 
                 <button type="button" class="btn btn-outline-success Auth-submit" onclick="loginSend()">ログイン</button>
@@ -54,6 +67,7 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
                         <?php
                         if (isset($_SESSION['error'])) {
                             echo $_SESSION['error'];
+                            unset($_SESSION['error']);
                         }
                         ?>
                     </p>
