@@ -64,7 +64,7 @@ require_once dirname(__FILE__, 3) . '/components/Header.php';
     </div>
     <div class="profile-pad-top">
         <div align="center">
-            <a href="" class="profile-btn">申請</a>
+            <a href="ReviewRequest.php" class="profile-btn">申請</a>
         </div>
     </div>
 

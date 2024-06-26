@@ -1,0 +1,21 @@
+.ReviewRequest-main{
+    padding-top: 190px;
+}
+
+.ReviewRequest-pad-top{
+    padding-top: 16px;
+}
+
+.ReviewRequest-btn{
+    color: #e37141;
+    border-color: #e37141;
+    background-color: #fafafa;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    text-decoration: none;
+}
