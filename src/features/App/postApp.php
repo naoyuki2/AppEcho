@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $app_category = filter_input(INPUT_POST, 'app_category', FILTER_VALIDATE_INT);
     $search_keywords = filter_input(INPUT_POST, 'search_keywords', FILTER_SANITIZE_SPECIAL_CHARS);
 
+var_dump($_FILES);
+
     // ファイルアップロードの処理
     if (isset($_FILES['app_icon']) && $_FILES['app_icon']['error'] == UPLOAD_ERR_OK) {
         $app_icon = $_FILES['app_icon'];
