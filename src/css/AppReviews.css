@@ -109,3 +109,23 @@ body{
     color: #4b4b4b;
     text-decoration: none;
 }
+
+.AppReviews-userWrap {
+    display: flex;
+    position: relative;
+    margin: .5rem 0;
+}
+
+.AppReviews-userIcon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    background-color: #4b4b4b;
+    border-radius: 100%;
+}
+
+.AppReviews-userName {
+    position: absolute;
+    bottom: 0;
+    left: 2.5rem;
+}
