@@ -6,7 +6,7 @@ $AppCategory = getAppCategory();
 
 <!-- アプリ投稿フォーム -->
 <h2>アプリ投稿</h2>
-<form action="../../features/App/postApp.php" method="POST">
+<form action="../../features/App/postApp.php" method="post">
     <label for="AppName">アプリ名:</label>
     <input type="text" id="AppName" name="AppName" size="30" placeholder="アプリ名を入力"><br>
 
@@ -17,10 +17,10 @@ $AppCategory = getAppCategory();
     <input type="text" id="AppDescription" name="AppDescription" size="30" placeholder="アプリの説明を入力"><br>
 
     <label for="AppStoreLink">ストアリンク:</label>
-    <input type="url" id="AppStoreLink" name="AppStoreLink" size="30" placeholder="ストアリンクを入力"><br>
+    <input type="text" id="AppStoreLink" name="AppStoreLink" size="30" placeholder="ストアリンクを入力"><br>
 
     <label for="AppPlayLink">Playストアリンク:</label>
-    <input type="url" id="AppPlayLink" name="AppPlayLink" size="30" placeholder="Playストアリンクを入力"><br>
+    <input type="text" id="AppPlayLink" name="AppPlayLink" size="30" placeholder="Playストアリンクを入力"><br>
 
     <p class="AppInsert-content">カテゴリ</p>
     <div class = "AppInsert-input">
@@ -42,9 +42,9 @@ $AppCategory = getAppCategory();
     </div>
 
     <label for="AppKeyword">検索用キーワード:</label>
-    <textarea id="AppKeyword" name="AppKeyword" placeholder="検索用キーワードを入力" size="30"></textarea><br>
+    <input type="text" id="AppKeyword" name="AppKeyword" placeholder="検索用キーワードを入力" size="30"></input><br>
 
-    <buttton type="submit" class="AppInsert-submit btn btn-outline-success">投稿する</button>
+    <button type="submit" class="AppInsert-submit btn btn-outline-success">投稿する</button>
 </form>
 
 <script src="../../features/AppSearch/AppSearch.js"></script>
