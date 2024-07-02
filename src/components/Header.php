@@ -5,7 +5,15 @@ session_start();
 $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 $isUser = isset($_SESSION['user']['image_url']);
 ?>
-
+<?php
+if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
+    $url = $_SERVER['REQUEST_URI'];
+    if(strstr($url, 'Auth') == false){
+        header('Location: Auth.php');  
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
