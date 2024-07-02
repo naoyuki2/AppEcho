@@ -7,8 +7,7 @@ $reqId = $_GET['reqId'];
 $judge = $_GET['judge'];
 if($judge == 'accept'){
     RequestAccept($reqId);
-    //アプリ投稿画面が完成したらアプリ投稿画面に遷移してください。
-    header('Location: ../../pages/user/AppList.php');
+    header('Location: ../../pages/admin/AppInsert.php?reqId='.$reqId);
 }else{
     RequestDestruction($reqId);
     header('Location: ../../pages/admin/RequestList.php');

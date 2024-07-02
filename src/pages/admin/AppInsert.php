@@ -1,14 +1,17 @@
 <?php
 require_once dirname(__FILE__, 3) . '/components/Header.php';
 require_once dirname(__FILE__, 3) . '/features/AppSearch/getAppCategory.php';
+require_once dirname(__FILE__, 3) . '/features/AppRequest/getRequestName.php';
+$reqId = $_GET['reqId'];
 $AppCategory = getAppCategory();
+$reqName = getRequestName($reqId);
 ?>
 
 <!-- アプリ投稿フォーム -->
 <h2>アプリ投稿</h2>
 <form action="../../features/App/postApp.php" method="post">
     <label for="AppName">アプリ名:</label>
-    <input type="text" id="AppName" name="AppName" size="30" placeholder="アプリ名を入力"><br>
+    <input type="text" id="AppName" name="AppName" size="30" placeholder="アプリ名を入力" value="<?php echo $reqName['app_name'] ?>"><br>
 
     <label for="AppIcon">アプリアイコン:</label>
     <input type="text" id="AppIcon" name="AppIcon" size="30" placeholder="アプリアイコンのリンクを入力"><br>
