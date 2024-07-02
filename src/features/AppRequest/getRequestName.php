@@ -9,5 +9,6 @@ function getRequestName($reqId)
             FROM request
             WHERE id = ?;
         ');
-    return $sql->execute([intval($reqId)]);
+    $sql->execute([intval($reqId)]);
+    return $sql->fetch();
 }
