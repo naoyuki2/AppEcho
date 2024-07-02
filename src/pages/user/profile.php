@@ -1,84 +1,76 @@
 <?php
 require_once dirname(__FILE__, 3) . '/components/Header.php';
+require_once dirname(__FILE__, 3) . '/features/UserProfile/getProfile.php';
+
+if (empty($_SESSION['user']['id'])) {
 ?>
-
-<div class="profile-main">
-<!-- 匿名機能 -->
-    <div class="profile-flex">
-        <div class="profile-pad-r">
-            <h3>匿名機能</h3>
-        </div>
-        <div class="profile-pad-l">
-            <!-- 切り替えボタン -->
-            <div class="profile-toggle_button">
-                <input id="profile-toggle" class="profile-toggle_input" type='checkbox' />
-                <label for="profile-toggle" class="profile-toggle_label"/>
-            </div>
-            <!-- ここまで-->
-        </div>
-    </div>
-
-<!-- プロフィール画像 -->
-    <div class="profile-pad-top">
-        <div align="center">
-            <img src="" alt="" class="profile-image">
-        </div>
-    </div>
-
-<!-- ユーザーネーム -->
-    <div class="profile-pad-top">
-        <div align="center">
-            <h3>ユーザーネーム</h3>
-        </div>
-    </div>
-
-<!-- メールアドレス -->
-    <div class="profile-pad-top">
-        <div align="center">
-            <h3>メールアドレス</h3>
-        </div>
-    </div>
-
-<!-- 編集ボタン -->
-    <div class="profile-pad-top">
-        <div align="center">
-            <a href="" class="profile-btn">編集</a>
-        </div>
-    </div>
-
-<!-- 過去レビュー -->
-    <div class="profile-pad-top2">
-        <div align="center">
-            <a href="" class="profile-a">
-                <h3>過去のレビューを表示</h3>
-            </a>
-        </div>
-    </div>
-
-<!-- アプリ申請 -->
-    <div class="profile-pad-top2">
-        <div align="center">
-            <h3>レビューしたいアプリが無い？</h3>
-            <h3>なら申請しろ！<h3>
-        </div>
-    </div>
-    <div class="profile-pad-top">
-        <div align="center">
-            <a href="ReviewRequest.php" class="profile-btn">申請</a>
-        </div>
-    </div>
-
-<!-- アプリ申請状況-->
-    <div class="profile-pad-top2">
-        <div align="center">
-            <a href="" class="profile-a">
-                <h3>アプリ申請状況</h3>
-            </a>
-        </div>
-    </div>
-
-</div>
-
+    <p class="profile-error">ログインしてください！</p>
 <?php
     require_once dirname(__FILE__, 3) . '/components/Footer.php';
+    exit;
+}
+
+$userId = $_SESSION['user']['id'];
+$profiles = getProfile($userId);
+
+foreach ($profiles as $profile) {
+?>
+
+    <div class="profile-main">
+        <div class="profile-mainInfo">
+            <div class="profile-configIcon-wrap">
+                <div class="profile-configIcon">
+                    <a href="#"><i class="fas fa-cog profile-configIcon-content"></i></a>
+                </div>
+            </div>
+
+            <!-- プロフィール画像 -->
+            <div class="profile-image-wrap">
+                <div align="center">
+                    <img src="<?php echo $profile['icon_image_url'] ?>" alt="userIcon" class="profile-image">
+                </div>
+            </div>
+
+            <!-- ユーザーネーム -->
+            <div class="profile-pad-top">
+                <div align="center">
+                    <p class="profile-userName"><?php echo $profile['name'] ?></p>
+                </div>
+            </div>
+
+            <!-- メールアドレス -->
+            <div>
+                <div align="center">
+                    <p class="profile-email"><?php echo $profile['email'] ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-subInfo">
+            <div class="profile-review">
+                <a href="#" class="profile-link">
+                    <p class="profile-review-count"><?php echo $profile['review'] ?></p>
+                    <p class="profile-review-text">REVIEWS</p>
+                </a>
+            </div>
+
+            <div class="profile-request">
+                <a href="#" class="profile-link">
+                    <p class="profile-request-count"><?php echo $profile['request'] ?></p>
+                    <p class="profile-request-text">REQUESTS</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 匿名機能 -->
+        <div>
+            <div class="profile-anonymous">
+                <p>匿名機能：<?php echo $profile['isAnonymous'] == 1 ? 'オン' : 'オフ' ?></p>
+            </div>
+        </div>
+    </div>
+
+<?php
+}
+require_once dirname(__FILE__, 3) . '/components/Footer.php';
 ?>
