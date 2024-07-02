@@ -32,28 +32,42 @@ $isUser = isset($_SESSION['user']['image_url']);
 
 <body>
     <header>
+        <div class="Header-wrap">
 
-        <div class="Header-left">
-            <div class="Header-search">
-                <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <div class="Header-left">
+                <div class="Header-search">
+                    <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
             </div>
-        </div>
 
-        <div class="Header-center">
-            <div class="Header-logo">
-                <a href="<?php echo $isAdmin ? '../user/AppList.php' : './AppList.php'; ?>"><img src="../../../img/logo.png"></a>
+            <div class="Header-center">
+                <div class="Header-logo">
+                    <a href="<?php echo $isAdmin ? '../user/AppList.php' : './AppList.php'; ?>"><img src="../../../img/logo.png"></a>
+                </div>
             </div>
-        </div>
 
-        <div class="Header-user">
-            <?php echo $isUser 
-             ? '<a href="../user/profile.php"><img class="Header-user-icon" src="'.$_SESSION['user']['image_url'].'"></a>'
-             : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl" style="color: #ffffff;"></i></a>';
-            ?>
-        </div>
+            <div class="Header-right">
+                <div class="Header-user">
+                    <?php echo $isUser
+                        ? '<a href="../user/profile.php"><img class="Header-user-icon" src="' . $_SESSION['user']['image_url'] . '"></a>'
+                        : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl Header-login-icon"></i></a>';
+                    ?>
+                </div>
 
-        <div class="admin">
-            <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
-        </div>
+                <div class="Header-logout">
+                    <div class="Header-logout-icon">
+                        <?php
+                        echo $isUser ? '<a onclick="logoutCheck()"><i class="fas fa-sign-out-alt"></i></a>' : '';
+                        ?>
+                    </div>
+                </div>
+            </div>
 
+            <div class="admin">
+                <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
+            </div>
+
+        </div>
     </header>
+
+    <script src="../../features/Header/header.js"></script>
