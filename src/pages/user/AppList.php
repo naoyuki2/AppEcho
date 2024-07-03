@@ -240,7 +240,6 @@ if ($AppList == 0) {
                                         ?>
                                             <div class="AppList_content">
                                                 <a href="AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
-                                                <p class="AppList_p"><?php echo $app['name'] ?></p>
                                             </div>
                                             <?php
                                             if ($cnt1 % 4 == 0) {
@@ -250,7 +249,7 @@ if ($AppList == 0) {
                                     <?php
                                                 $cnt2++;
                                             }
-                                            if ($cnt2 % 4 == 0) {
+                                            if ($cnt2 % 6 == 0) {
                                     ?>
                                     </div>
                                 </div>
