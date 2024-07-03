@@ -18,9 +18,13 @@ foreach ($profiles as $profile) {
 
     <div class="profile-main">
         <div class="profile-mainInfo">
+            <!-- プロフィール編集遷移ボタン -->
             <div class="profile-configIcon-wrap">
                 <div class="profile-configIcon">
                     <a href="#"><i class="fas fa-cog profile-configIcon-content"></i></a>
+                </div>
+                <div class="profile-logoutIcon">
+                    <a onclick="logoutCheck()"><i class="fas fa-sign-out-alt profile-logoutIcon-content"></i></a>
                 </div>
             </div>
 
@@ -69,6 +73,8 @@ foreach ($profiles as $profile) {
             </div>
         </div>
     </div>
+
+    <script src="../../features/UserProfile/profile.js"></script>
 
 <?php
 }
