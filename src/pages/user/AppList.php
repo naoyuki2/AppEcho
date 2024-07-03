@@ -226,7 +226,7 @@ if ($AppList == 0) {
         </div>
         <div class="flow01 l-section">
             <div class="l-inner">
-                <div class="swiper-pagination-main"></div>
+                <div class="swiper-pagination swiper-pagination-main"></div>
                 <div class="swiper swiper-main">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
