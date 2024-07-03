@@ -71,7 +71,7 @@ require_once dirname(__FILE__, 3) . '/components/Header.php';
 <!-- アプリ申請状況-->
     <div class="profile-pad-top2">
         <div align="center">
-            <a href="" class="profile-a">
+            <a href="AppRequestStatus.php" class="profile-a">
                 <h3>アプリ申請状況</h3>
             </a>
         </div>

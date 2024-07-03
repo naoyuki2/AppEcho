@@ -13,3 +13,16 @@ function getRequest()
         ');
     return $sql->fetchAll();
 }
+
+function getRequestByUserId($userId)
+{
+    global $pdo;
+    $sql = $pdo->prepare('
+            SELECT app_name,status
+            FROM request
+            WHERE user_id = ?;
+        ');
+
+        $sql->execute([$userId]);
+        return $sql->fetchAll();
+}
