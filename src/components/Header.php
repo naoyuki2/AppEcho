@@ -5,7 +5,18 @@ session_start();
 $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 $isUser = isset($_SESSION['user']['image_url']);
 ?>
-
+<?php
+if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
+    $url = $_SERVER['REQUEST_URI'];
+    $URL = substr($url,23);
+    if(strstr($URL, 'App') == false){
+        if(strstr($URL, 'Auth') == false){
+            header('Location: Auth.php');  
+            exit;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -28,33 +39,35 @@ $isUser = isset($_SESSION['user']['image_url']);
     <link rel="stylesheet" href="../../css/profile.css">
     <link rel="stylesheet" href="../../css/ReviewHistory.css">
     <link rel="stylesheet" href="../../css/AppRequestStatus.css">
-    
+    <link rel="stylesheet" href="../../css/ReviewRequest.css">
 </head>
 
 <body>
     <header>
+        <div class="Header-wrap">
 
-        <div class="Header-left">
-            <div class="Header-search">
-                <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <div class="Header-left">
+                <div class="Header-search">
+                    <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
+
+            <div class="Header-center">
+                <div class="Header-logo">
+                    <a href="<?php echo $isAdmin ? '../user/AppList.php' : './AppList.php'; ?>"><img src="../../../img/logo.png"></a>
+                </div>
+            </div>
+
+            <div class="Header-right">
+                <div class="Header-user">
+                    <?php echo $isUser
+                        ? '<a href="../user/profile.php"><img class="Header-user-icon" src="' . $_SESSION['user']['image_url'] . '"></a>'
+                        : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl Header-login-icon"></i></a>';
+                    ?>
+                </div>
+            </div>
+            <div class="admin">
+                <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
             </div>
         </div>
-
-        <div class="Header-center">
-            <div class="Header-logo">
-                <a href="<?php echo $isAdmin ? '../user/AppList.php' : './AppList.php'; ?>"><img src="../../../img/logo.png"></a>
-            </div>
-        </div>
-
-        <div class="Header-user">
-            <?php echo $isUser 
-             ? '<a href="../user/profile.php"><img class="Header-user-icon" src="'.$_SESSION['user']['image_url'].'"></a>'
-             : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl" style="color: #ffffff;"></i></a>';
-            ?>
-        </div>
-
-        <div class="admin">
-            <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
-        </div>
-
     </header>

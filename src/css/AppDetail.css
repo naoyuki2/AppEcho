@@ -24,6 +24,7 @@
     display: flex;
     justify-content: center;
     padding-top: 1.2rem;
+    padding-bottom: 40px;
 }
 
 .AppDetail-com{
@@ -42,11 +43,13 @@
 .AppDetail-fl-left{
     position: absolute;
     left: 0;
+    padding-left: 16px;
 }
 
 .AppDetail-fl-right{
     position: absolute;
     right: 0;
+    padding-right: 16px;
 }
 
 .AppDetail-update-botm{
@@ -89,4 +92,8 @@
     height: auto;
     text-decoration: none;
     color: inherit;
+}
+
+.AppDetail-p-left{
+    text-align: left;
 }

@@ -34,3 +34,11 @@ function allClear() {
     form.action = "./AppList.php";
     form.submit();
 }
+
+const swiper = new Swiper('.swiper-main', {
+    loop: false,
+    pagination: {
+        el: '.swiper-pagination-main',
+        clickable: true,
+    }
+});

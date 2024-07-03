@@ -114,9 +114,11 @@ $users = getUser();
 <?php } ?>
 
 <!-- モーダルを開くボタン -->
-<button type="button" class="btn btn-primary" id="AppReviews-openmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="AppReviews-plus fa-solid fa-plus"></i>
-</button>
+<div class="AppReviews-pad-top">
+    <button type="button" class="btn btn-primary" id="AppReviews-openmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="AppReviews-plus fa-solid fa-plus"></i>
+    </button>
+</div>
 
 <!-- モーダルの内容 -->
 <form action="../../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post" id="AppReviews-form">
@@ -157,7 +159,6 @@ $users = getUser();
                         <h4>レビュー</h4>
                     </div>
                     <div><textarea class="AppReviews-review" name="content" id="AppReviews-reviewarea" placeholder="入力してください"></textarea></div>
-                    <input type="hidden" name="userId" value="<?php echo isset($userId) ? $userId : null ?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="AppReviews-post" data-bs-dismiss="modal" aria-label="Close" onclick="reviewCheck(<?php echo $appId; ?>)">投稿する</button>

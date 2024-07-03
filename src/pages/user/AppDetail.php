@@ -34,7 +34,7 @@ foreach ($AppDetail as $detail) {
                 </b>
             </div>
             <div align="center">
-                <p><?php echo $detail['info'] ?></p>
+                <p class="AppDetail-p-left"><?php echo $detail['info'] ?></p>
             </div>
 
             <div align="left">
