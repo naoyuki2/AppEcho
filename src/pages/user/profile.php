@@ -52,7 +52,7 @@ foreach ($profiles as $profile) {
 
         <div class="profile-subInfo">
             <div class="profile-review">
-                <a href="#" class="profile-link">
+                <a href="ReviewHistory.php" class="profile-link">
                     <p class="profile-review-count"><?php echo $profile['review'] ?></p>
                     <p class="profile-review-text">REVIEWS</p>
                 </a>
