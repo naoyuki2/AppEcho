@@ -7,15 +7,28 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
 }
 
-.Header-search{
+.Header-wrap {
+    position: relative;
+    display: flex;
+    height: inherit;
+}
+
+.Header-right {
+    display: flex;
+    position: absolute;
+    height: fit-content;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.Header-search, .Header-login-icon{
     color: #FAFAFA;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .Header-search > a {
@@ -24,18 +37,31 @@ header {
 }
 
 .Header-left{
-    float: left;
+    position: absolute;
+    height: fit-content;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
 }
 
 .Header-center{
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    width: fit-content;
+    inset: 0;
+    margin: auto;
+    margin-top: .2rem;
 }
 
 .Header-div{
     padding: 20px;
 }
 
+.Header-user {
+    margin-right: .5rem;
+    margin-top: .2rem;
+}
+
 .Header-user-icon{
-    width: 35px;
+    width: 2rem;
 }

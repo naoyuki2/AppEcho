@@ -114,9 +114,11 @@ $users = getUser();
 <?php } ?>
 
 <!-- モーダルを開くボタン -->
-<button type="button" class="btn btn-primary" id="AppReviews-openmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="AppReviews-plus fa-solid fa-plus"></i>
-</button>
+<div class="AppReviews-pad-top">
+    <button type="button" class="btn btn-primary" id="AppReviews-openmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="AppReviews-plus fa-solid fa-plus"></i>
+    </button>
+</div>
 
 <!-- モーダルの内容 -->
 <form action="../../features/AppReviews/postReview.php?appId=<?php echo $appId; ?>" method="post" id="AppReviews-form">
