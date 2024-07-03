@@ -7,7 +7,7 @@ $color;
 
 <?php foreach($request as $Request) { 
     if ($Request['status'] === "0") {
-        $color="progress";
+        $color="request";
     } elseif ($Request['status'] === "1") {
         $color="acceptance";
     } elseif ($Request['status'] === "2") {
