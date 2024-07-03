@@ -66,7 +66,12 @@ foreach ($profiles as $profile) {
             </div>
         </div>
 
-        <!-- 匿名機能 -->
+<!-- アプリ申請状況-->
+    <div class="profile-pad-top2">
+        <div align="center">
+            <a href="AppRequestStatus.php" class="profile-a">
+                <h3>アプリ申請状況</h3>
+            </a>
         <div>
             <div class="profile-anonymous">
                 <p>匿名機能：<?php echo $profile['isAnonymous'] == 1 ? 'オン' : 'オフ' ?></p>
