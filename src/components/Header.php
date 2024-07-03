@@ -8,9 +8,12 @@ $isUser = isset($_SESSION['user']['image_url']);
 <?php
 if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
     $url = $_SERVER['REQUEST_URI'];
-    if(strstr($url, 'Auth') == false){
-        header('Location: Auth.php');  
-        exit;
+    $URL = substr($url,23);
+    if(strstr($URL, 'App') == false){
+        if(strstr($URL, 'Auth') == false){
+            header('Location: Auth.php');  
+            exit;
+        }
     }
 }
 ?>
@@ -63,5 +66,4 @@ if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
         <div class="admin">
             <a href="../admin/adminTop.php"><?php echo $isAdmin ? '管理者' : ''; ?></a>
         </div>
-
     </header>
