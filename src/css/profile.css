@@ -18,11 +18,18 @@
 .profile-configIcon {
   position: absolute;
   top: .8rem;
-  right: -1rem;
+  left: -1.5rem;
   font-size: 1.2rem;
 }
 
-.profile-configIcon-content {
+.profile-logoutIcon {
+  position: absolute;
+  top: .8rem;
+  right: -1.5rem;
+  font-size: 1.2rem;
+}
+
+.profile-configIcon-content, .profile-logoutIcon-content {
   text-decoration: none;
   color: gray;
 }
@@ -118,4 +125,6 @@
   width: fit-content;
   margin: 0 auto;
   font-size: .8rem;
+  border-bottom: 1px solid;
+  padding: 0 .1rem;
 }

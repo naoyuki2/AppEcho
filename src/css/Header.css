@@ -26,12 +26,12 @@ header {
     margin: auto 0;
 }
 
-.Header-search, .Header-logout-icon, .Header-login-icon{
+.Header-search, .Header-login-icon{
     color: #FAFAFA;
     font-size: 2rem;
 }
 
-.Header-search > a, .Header-logout-icon > a {
+.Header-search > a {
     color: #FAFAFA;
     text-decoration: none;
 }

@@ -53,14 +53,6 @@ $isUser = isset($_SESSION['user']['image_url']);
                         : '<a href="../user/Auth.php"><i class="fa-solid fa-right-to-bracket fa-xl Header-login-icon"></i></a>';
                     ?>
                 </div>
-
-                <div class="Header-logout">
-                    <div class="Header-logout-icon">
-                        <?php
-                        echo $isUser ? '<a onclick="logoutCheck()"><i class="fas fa-sign-out-alt"></i></a>' : '';
-                        ?>
-                    </div>
-                </div>
             </div>
 
             <div class="admin">
@@ -69,5 +61,3 @@ $isUser = isset($_SESSION['user']['image_url']);
 
         </div>
     </header>
-
-    <script src="../../features/Header/header.js"></script>
