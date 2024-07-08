@@ -17,9 +17,11 @@ if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
             }
         }
     }
+}
+if(!isset($_SESSION['admin'])){
     if(strstr($URL, 'user') == false){
         if(strstr($URL, 'login') == false){
-            header('Location: Auth.php');  
+            header('Location: login.php');  
             exit;
         }
     }
@@ -53,7 +55,7 @@ if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
 <body>
     <header>
         <div class="Header-wrap">
-
+            
             <div class="Header-left">
                 <div class="Header-search">
                     <a href="./AppSearch.php"><i class="fa-solid fa-magnifying-glass"></i></a>
