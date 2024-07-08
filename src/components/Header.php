@@ -8,9 +8,17 @@ $isUser = isset($_SESSION['user']['image_url']);
 <?php
 if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
     $url = $_SERVER['REQUEST_URI'];
-    $URL = substr($url,23);
-    if(strstr($URL, 'App') == false){
-        if(strstr($URL, 'Auth') == false){
+    $URL = substr($url,19);
+    if(strstr($URL, 'admin') == false){
+        if(strstr($URL, 'App') == false){
+            if(strstr($URL, 'Auth') == false){
+                header('Location: Auth.php');  
+                exit;
+            }
+        }
+    }
+    if(strstr($URL, 'user') == false){
+        if(strstr($URL, 'login') == false){
             header('Location: Auth.php');  
             exit;
         }
