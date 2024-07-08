@@ -18,7 +18,7 @@ if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
         }
     }
 }
-if($_SESSION['admin'] == false){
+if(!isset($_SESSION['admin']) || $_SESSION['admin'] === ''){
     if(strstr($URL, 'user') == false){
         if(strstr($URL, 'login') == false){
             header('Location: login.php');  
