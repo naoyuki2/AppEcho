@@ -68,3 +68,7 @@
     left: 87%;
     top: 67%;
 }
+
+::-ms-reveal {
+    display: none;
+}
