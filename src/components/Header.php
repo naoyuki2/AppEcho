@@ -6,9 +6,9 @@ $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
 $isUser = isset($_SESSION['user']['image_url']);
 ?>
 <?php
+$url = $_SERVER['REQUEST_URI'];
+$URL = substr($url,19);
 if(!isset($_SESSION['user']['id']) || $_SESSION['user']['id'] === ''){
-    $url = $_SERVER['REQUEST_URI'];
-    $URL = substr($url,19);
     if(strstr($URL, 'admin') == false){
         if(strstr($URL, 'App') == false){
             if(strstr($URL, 'Auth') == false){
