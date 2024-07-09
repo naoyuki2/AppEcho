@@ -28,7 +28,7 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
                 </div>
 
                 <div class="Auth-inputContent">
-                    <p id="Auth-signUp-dbError">
+                    <p id="Auth-signIn-dbError">
                         <?php
                         if (isset($_SESSION['signin-error'])) {
                             echo $_SESSION['signin-error'];
@@ -36,8 +36,6 @@ $isSignUp = isset($_GET['signUp']) && $_GET['signUp'] == true;
                         }
                         ?>
                     </p>
-                    <p class="Auth-signUpError" id="Auth-signUp-mailError"></p>
-                    <p class="Auth-signUpError" id="Auth-signUp-passwordError"></p>
                 </div>
 
                 <button type="button" class="btn btn-outline-success Auth-submit" onclick="loginSend()">ログイン</button>
