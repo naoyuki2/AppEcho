@@ -5,30 +5,37 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $reqId = $_GET['reqId'];
 $judge = $_GET['judge'];
+$date = new DateTime();
+$judge_date = $date->format("Y-m-d");
+
 if($judge == 'accept'){
-    RequestAccept($reqId);
+    RequestAccept($judge_date,$reqId);
     header('Location: ../../pages/admin/AppInsert.php?reqId='.$reqId);
 }else{
-    RequestDestruction($reqId);
+    RequestDestruction($judge_date,$reqId);
     header('Location: ../../pages/admin/RequestList.php');
 }
 exit();
 
-function RequestDestruction($reqId) {
+function RequestDestruction($judge_date,$reqId) {
     global $pdo;
     $sql = $pdo->prepare('
-        update request set status = 2
+        update request set 
+        status = 2,
+        judge_date = ?
         where id = ?;
     ');
-    $result = $sql->execute([$reqId]);
+    $result = $sql->execute([$judge_date,$reqId]);
 }
 
-function RequestAccept($reqId) {
+function RequestAccept($judge_date,$reqId) {
     global $pdo;
     $sql = $pdo->prepare('
-        update request set status = 1
+        update request set 
+        status = 1,
+        judge_date = ?
         where id = ?;
     ');
-    $result = $sql->execute([$reqId]);
+    $result = $sql->execute([$judge_date,$reqId]);
 }
 ?>

@@ -18,7 +18,7 @@ function getRequestByUserId($userId)
 {
     global $pdo;
     $sql = $pdo->prepare('
-            SELECT app_name,status
+            SELECT app_name,status,request_date,judge_date
             FROM request
             WHERE user_id = ?;
         ');
