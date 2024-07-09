@@ -40,7 +40,7 @@ $users = getUser();
             ?>
                     <div class="AppReviews-fl-left">
                         <button class="AppReviews-btn">
-                            <?php echo $tag['name'] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                            <?php echo $tag['name'] ?>
                         </button>
                     </div>
             <?php
@@ -55,7 +55,6 @@ $users = getUser();
                         <button class="AppReviews-btn">
                             <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
                             <?php echo $stars ?>
-                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                         </button>
                     </div>
             <?php
