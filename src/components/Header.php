@@ -50,6 +50,7 @@ if(!isset($_SESSION['admin']) || $_SESSION['admin'] === ''){
     <link rel="stylesheet" href="../../css/ReviewHistory.css">
     <link rel="stylesheet" href="../../css/AppRequestStatus.css">
     <link rel="stylesheet" href="../../css/ReviewRequest.css">
+    <link rel="stylesheet" href="../../css/EditProfile.css">
 </head>
 
 <body>
