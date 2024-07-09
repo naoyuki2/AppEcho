@@ -117,7 +117,7 @@ if ($AppList == 0) {
                                     <div class="AppList-fl-left">
                                         <input type="hidden" name="AppName[]" value="<?php echo $split[$i] ?>" class="AppList-btn-text">
                                         <button type="button" class="AppList-btn" onclick="textCancel(<?php echo $textCnt ?>)">
-                                            <?php echo $split[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                            <?php echo $split[$i] ?>
                                         </button>
                                     </div>
                             <?php
@@ -133,7 +133,7 @@ if ($AppList == 0) {
                                 <div class="AppList-fl-left">
                                     <input type="hidden" name="category[]" value="<?php echo $categories[$i] ?>" class="AppList-btn-category">
                                     <button type="button" class="AppList-btn" onclick="categoryCancel(<?php echo $i ?>)">
-                                        <?php echo $categories[$i] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                                        <?php echo $categories[$i] ?>
                                     </button>
                                 </div>
                         <?php
@@ -151,7 +151,6 @@ if ($AppList == 0) {
                                     <button type="button" class="AppList-btn" onclick="starCancel(<?php echo $i ?>)">
                                         <i class=" fa-regular fa-star AppList-icon" style="color: #4b4b4b"></i>
                                         <?php echo $stars[$i] ?>
-                                        <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                     </button>
                                 </div>
                             <?php
@@ -171,7 +170,6 @@ if ($AppList == 0) {
                                 ?>
                                         <button type="submit" class="AppList-btn">
                                             評価が高い順
-                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                         </button>
                                     <?php
                                         break;
@@ -182,7 +180,6 @@ if ($AppList == 0) {
                                     ?>
                                         <button type="submit" class="AppList-btn">
                                             評価が低い順
-                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                         </button>
                                     <?php
                                         break;
@@ -193,7 +190,6 @@ if ($AppList == 0) {
                                     ?>
                                         <button type="submit" class="AppList-btn">
                                             新しい順
-                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                         </button>
                                     <?php
                                         break;
@@ -204,7 +200,6 @@ if ($AppList == 0) {
                                     ?>
                                         <button type="submit" class="AppList-btn">
                                             古い順
-                                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                                         </button>
                                 <?php
                                         break;
