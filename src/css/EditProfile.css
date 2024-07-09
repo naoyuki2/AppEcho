@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+.EditProfile-main {
+    margin: .5rem;
+}
+
+.EditProfile-pad-top {
+    padding-top: .5rem;
+}
+
+.EditProfile-userIcon {
+    font-size: .8rem;
+}
+
+.EditProfile-userIcon::file-selector-button {
+    color: #3EA632;
+    border: 1px solid #3EA632;
+    background-color: #fafafa;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: .2rem 1rem;
+}
+
+.EditProfile-userIcon-preview {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    filter: drop-shadow(1px 0 1px gray);
+    border-radius: 100%;
+    padding: .15rem;
+    display: none;
+}
+
+.EditProfile-subTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-left: .2rem solid #3EA632;
+    padding-left: .3rem;
+    margin: .5rem 0;
+}
+
+.EditProfile-input {
+    font-size: .8rem;
+}
+
+.EditProfile-error {
+    position: fixed;
+    left: 50%;
+    font-size: .8rem;
+    color: red;
+}
+
+#EditProfile-mailError {
+    transform: translateX(-50%) translateY(60%);
+}
+
+#EditProfile-dbError {
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.EditProfile-submit {
+    display: flex;
+    margin: 3rem auto;
+}
+
+.EditProfile-isAnonymous-wrap {
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.EditProfile-isAnonymous {
+    transform: scale(1.5);
+}
+
+#EditProfile-isAnonymous-label {
+    padding-left: 1rem;
+}
+
+.EditProfile-isAnonymous:checked {
+    background-color: #3EA632;
+    border-color: #3EA632;
+}
+
+.EditProfile-infoWrap {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.EditProfile-info {
+    text-align: start;
+    font-size: .8rem;
+    margin: 0 1rem;
+}
