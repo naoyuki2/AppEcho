@@ -94,6 +94,11 @@
     color: inherit;
 }
 
+.AppDetail-info {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .AppDetail-p-left{
-    text-align: left;
+    text-align: start;
 }
