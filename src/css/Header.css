@@ -1,67 +1,69 @@
 header {
-    height: 68px;
-    background-color: #3EA632;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+  height: 68px;
+  background-color: #3ea632;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+  z-index: 5;
 }
 
 .Header-wrap {
-    position: relative;
-    display: flex;
-    height: inherit;
+  position: relative;
+  display: flex;
+  height: inherit;
 }
 
 .Header-right {
-    display: flex;
-    position: absolute;
-    height: fit-content;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+  display: flex;
+  position: absolute;
+  height: fit-content;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
-.Header-search, .Header-login-icon{
-    color: #FAFAFA;
-    font-size: 2rem;
+.Header-search,
+.Header-login-icon {
+  color: #fafafa;
+  font-size: 2rem;
 }
 
 .Header-search > a {
-    color: #FAFAFA;
-    text-decoration: none;
+  color: #fafafa;
+  text-decoration: none;
 }
 
-.Header-left{
-    position: absolute;
-    height: fit-content;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+.Header-left {
+  position: absolute;
+  height: fit-content;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
-.Header-center{
-    position: absolute;
-    width: fit-content;
-    inset: 0;
-    margin: auto;
-    margin-top: .2rem;
+.Header-center {
+  position: absolute;
+  width: fit-content;
+  inset: 0;
+  margin: auto;
+  margin-top: 0.2rem;
 }
 
-.Header-div{
-    padding: 20px;
+.Header-div {
+  padding: 20px;
 }
 
 .Header-user {
-    margin-right: .5rem;
-    margin-top: .2rem;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
 }
 
-.Header-user-icon{
-    width: 2rem;
+.Header-user-icon {
+  width: 2rem;
 }
