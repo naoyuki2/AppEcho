@@ -21,7 +21,7 @@ foreach ($profiles as $profile) {
             <!-- プロフィール編集遷移ボタン -->
             <div class="profile-configIcon-wrap">
                 <div class="profile-configIcon">
-                    <a href="#"><i class="fas fa-cog profile-configIcon-content"></i></a>
+                    <a href="./EditProfile.php"><i class="fas fa-cog profile-configIcon-content"></i></a>
                 </div>
                 <div class="profile-logoutIcon">
                     <a onclick="logoutCheck()"><i class="fas fa-sign-out-alt profile-logoutIcon-content"></i></a>
@@ -66,9 +66,17 @@ foreach ($profiles as $profile) {
             </div>
         </div>
 
-<!-- アプリ申請状況-->
-    <div class="profile-pad-top2">
-        <div align="center">
+        <!-- アプリ申請状況-->
+        <div class="profile-pad-top2">
+            <div align="center">
+                <a href="AppRequestStatus.php" class="profile-a">
+                    <h3>アプリ申請状況</h3>
+                </a>
+            </div>
+        </div>
+
+        <!-- 匿名機能 -->
+        <div>
             <div class="profile-anonymous">
                 <p>匿名機能：<?php echo $profile['isAnonymous'] == 1 ? 'オン' : 'オフ' ?></p>
             </div>

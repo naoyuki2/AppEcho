@@ -3,10 +3,6 @@ require_once dirname(__FILE__, 3) . '/components/Header.php';
 require_once dirname(__FILE__, 3) . '/features/AppReviews/getReviews.php';
 require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
 
-if (isset($_SESSION['user']['id'])) {
-    $userId = $_SESSION['user']['id'];
-}
-
 $appId = $_GET['appId'];
 if (isset($_GET['tagId'])) {
     $tagId = $_GET['tagId'];
@@ -40,7 +36,7 @@ $users = getUser();
             ?>
                     <div class="AppReviews-fl-left">
                         <button class="AppReviews-btn">
-                            <?php echo $tag['name'] ?><i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
+                            <?php echo $tag['name'] ?>
                         </button>
                     </div>
             <?php
@@ -55,7 +51,6 @@ $users = getUser();
                         <button class="AppReviews-btn">
                             <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
                             <?php echo $stars ?>
-                            <i class="fa-solid fa-xmark" style="color: #4b4b4b"></i>
                         </button>
                     </div>
             <?php

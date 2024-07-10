@@ -50,7 +50,7 @@
   width: 4rem;
   height: 4rem;
   object-fit: contain;
-  background-color: gray;
+  filter: drop-shadow(1px 0 1px gray);
   border-radius: 100%;
   padding: .15rem;
 }
