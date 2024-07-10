@@ -59,7 +59,7 @@ foreach ($profiles as $profile) {
             </div>
 
             <div class="profile-request">
-                <a href="#" class="profile-link">
+                <a href="AppRequestStatus.php" class="profile-link">
                     <p class="profile-request-count"><?php echo $profile['request'] ?></p>
                     <p class="profile-request-text">REQUESTS</p>
                 </a>
