@@ -3,10 +3,6 @@ require_once dirname(__FILE__, 3) . '/components/Header.php';
 require_once dirname(__FILE__, 3) . '/features/AppReviews/getReviews.php';
 require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
 
-if (isset($_SESSION['user']['id'])) {
-    $userId = $_SESSION['user']['id'];
-}
-
 $appId = $_GET['appId'];
 if (isset($_GET['tagId'])) {
     $tagId = $_GET['tagId'];
