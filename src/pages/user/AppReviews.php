@@ -91,17 +91,21 @@ $users = getUser();
             if ($user['id'] == $review['user_id'] && $user['isAnonymous'] == 0) {
         ?>
                 <div class="AppReviews-userWrap">
-                    <img src="<?php echo $user['icon_image_url'] ?>" alt="userIcon" class="AppReviews-userIcon">
-                    <span class="AppReviews-userName"><?php echo $user['name'] ?></span>
+                    <div class="AppReviews-userWrap-content">
+                        <img src="<?php echo $user['icon_image_url'] ?>" alt="userIcon" class="AppReviews-userIcon">
+                        <span class="AppReviews-userName"><?php echo $user['name'] ?></span>
+                    </div>
                 </div>
         <?php
             }
         }
         ?>
 
-        <p class="AppReviews-comment">
-            <?php echo nl2br($review['content']) ?>
-        </p>
+        <div class="AppReviews-comment-wrap">
+            <p class="AppReviews-comment">
+                <?php echo nl2br($review['content']) ?>
+            </p>
+        </div>
         <div class="AppReviews-date">
             <?php echo $review['post_date'] ?>
         </div>

@@ -8,10 +8,12 @@ body{
     margin-top: 4px;
     padding-left: 8px;
     padding-right: 8px;
+    position: relative;
 }
 
 .AppReviews-number{
     font-size: small;
+    margin-left: .5rem;
 }
 
 .AppReviews-point{
@@ -32,8 +34,14 @@ body{
     background-color: #fafafa;
 }
 
+.AppReviews-comment-wrap {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .AppReviews-comment{
-    text-align: left;
+    margin: 1rem .5rem;
+    text-align: start;
 }
 
 .AppReviews-date{
@@ -111,9 +119,16 @@ body{
 }
 
 .AppReviews-userWrap {
+    position: absolute;
+}
+
+.AppReviews-userWrap-content {
     display: flex;
+    flex-flow: column;
+    width: 3rem;
+    align-items: center;
     position: relative;
-    margin: .5rem 0;
+    margin: .2rem 0;
 }
 
 .AppReviews-userIcon {
@@ -125,9 +140,12 @@ body{
 }
 
 .AppReviews-userName {
-    position: absolute;
-    bottom: 0;
-    left: 2.5rem;
+    width: inherit;
+    text-align: center;
+    font-size: .8rem;
+    overflow-wrap: break-word;
+    line-height: .7rem;
+    margin-top: .2rem;
 }
 
 .AppReviews-pad-top{
