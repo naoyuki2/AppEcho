@@ -228,8 +228,11 @@ if ($AppList == 0) {
                             <div class="mainslide">
                                 <div class="subslide">
                                     <div class="AppList_wrap">
+                                        <div class="AppList_content">
+                                            <a href="AppRandomView.php"><img class="AppList_img" src="" alt="ランダム"></a>
+                                        </div>
                                         <?php
-                                        $cnt1 = 1;
+                                        $cnt1 = 2;
                                         $cnt2 = 1;
                                         foreach ($AppList as $app) {
                                         ?>
