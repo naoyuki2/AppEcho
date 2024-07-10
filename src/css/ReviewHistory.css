@@ -1,14 +1,20 @@
 /* アイコン */
-.icon{
+.ReviewHistory-icon{
     width: 50px;
     border-radius: 10px;
 }
 
-/* アプリ名 */
-.AppReviews-number{
+.ReviewHistory-link {
+    display: contents;
+    width: fit-content;
+    text-decoration: none;
 }
 
-/* レビュー内容 */
-.AppReviews-comment{
+.ReviewHistory-comment-wrap {
+    width: fit-content;
+    margin: 0 auto;
+}
 
+.ReviewHistory-comment {
+    text-align: start;
 }
