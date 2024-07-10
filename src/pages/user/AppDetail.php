@@ -33,7 +33,7 @@ foreach ($AppDetail as $detail) {
                     <p class="AppDetail-midasi">アプリ説明</p>
                 </b>
             </div>
-            <div align="center">
+            <div align="center" class="AppDetail-info">
                 <p class="AppDetail-p-left"><?php echo $detail['info'] ?></p>
             </div>
 
