@@ -11,7 +11,7 @@ $content = $_POST['content'];
 $star = $_POST['star'];
 
 if (isset($_SESSION['user']['id'])) {
-    $userId = $_POST['userId'];
+    $userId = $_SESSION['user']['id'];
 } else {
     $userId = null;
 }
