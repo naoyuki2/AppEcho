@@ -66,15 +66,6 @@ foreach ($profiles as $profile) {
             </div>
         </div>
 
-        <!-- アプリ申請状況-->
-        <div class="profile-pad-top2">
-            <div align="center">
-                <a href="AppRequestStatus.php" class="profile-a">
-                    <h3>アプリ申請状況</h3>
-                </a>
-            </div>
-        </div>
-
         <!-- 匿名機能 -->
         <div>
             <div class="profile-anonymous">
