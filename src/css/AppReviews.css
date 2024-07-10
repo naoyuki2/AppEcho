@@ -35,8 +35,7 @@ body{
 }
 
 .AppReviews-comment-wrap {
-    width: fit-content;
-    margin: 0 auto;
+    margin-left: 3rem;
 }
 
 .AppReviews-comment{
