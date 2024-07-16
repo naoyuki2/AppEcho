@@ -72,3 +72,23 @@
 .swiper-wrapper {
     height: 89.5vh;
 }
+
+.AppList_random_wrap {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid #4b4b4b;
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.AppList_random {
+    position: absolute;
+    inset: 0;
+    font-size: 2.5rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    color: #fafafa;
+}
