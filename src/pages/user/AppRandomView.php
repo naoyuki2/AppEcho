@@ -1,15 +1,14 @@
 <?php
 require_once dirname(__FILE__, 3) . '/components/Header.php';
-require_once dirname(__FILE__, 3) . '/features/AppRandom/getAppAll.php';
-$appList = getAppAll();
-$Id = rand(1,$appList['app_count']);
-header('Location:../../pages/user/AppDetail.php?appId='.$Id);
-exit();
+require_once dirname(__FILE__, 3) . '/features/AppRandom/getAppRandom.php';
+$appId = getAppRandom();
 ?>
 
-<div>
-    <p>ここでアニメーション入れたい</p>
-</div>
+<form action="AppDetail.php" method="get" name="AppRandomForm">
+    <input type="hidden" name="appId" value="<?php echo $appId ?>">
+</form>
+
+<script src="../../features/AppRandom/appRandom.js"></script>
 
 <?php
 require_once dirname(__FILE__, 3) . '/components/Footer.php';
