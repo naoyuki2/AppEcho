@@ -12,6 +12,8 @@ if (empty($_SESSION['user']['id'])) {
 
 $userId = $_SESSION['user']['id'];
 $profiles = getProfile($userId);
+$reviews = getReview($userId);
+$requests = getRequest($userId);
 
 foreach ($profiles as $profile) {
 ?>
@@ -53,14 +55,14 @@ foreach ($profiles as $profile) {
         <div class="profile-subInfo">
             <div class="profile-review">
                 <a href="ReviewHistory.php" class="profile-link">
-                    <p class="profile-review-count"><?php echo $profile['review'] ?></p>
+                    <p class="profile-review-count"><?php echo isset($reviews['review']) ? $reviews['review'] : '0' ?></p>
                     <p class="profile-review-text">REVIEWS</p>
                 </a>
             </div>
 
             <div class="profile-request">
                 <a href="AppRequestStatus.php" class="profile-link">
-                    <p class="profile-request-count"><?php echo $profile['request'] ?></p>
+                    <p class="profile-request-count"><?php echo isset($requests['request']) ? $requests['request'] : '0' ?></p>
                     <p class="profile-request-text">REQUESTS</p>
                 </a>
             </div>
