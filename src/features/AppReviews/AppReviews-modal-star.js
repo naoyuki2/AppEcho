@@ -51,7 +51,10 @@ function reviewCheck(id){
     }
 
     if(!flag1 || !flag2 || text.value==""){
-        alert("未入力の項目があります！");
+        Swal.fire({
+            icon: "warning",
+            text: "未入力の項目があります！",
+        });
     }else{
         var form = document.getElementById('AppReviews-form');
         var formData = new FormData(form);
