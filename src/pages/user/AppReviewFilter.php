@@ -4,7 +4,12 @@ require_once dirname(__FILE__, 3) . '/features/AppFilter/getTag.php';
 $Tags = getTag();
 $appId = $_GET['appId'];
 ?>
-
+<?php
+    if(!isset($appId)){
+        header('Location: AppList.php');  
+        exit;
+    }
+?>
 <form action="AppReviews.php" method="GET">
     <input type="hidden" name="appId" id="appId" value="<?php echo $appId ?>">
     <div class="AppFilter-wrap">
