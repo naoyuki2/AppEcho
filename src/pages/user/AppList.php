@@ -1,7 +1,9 @@
 <?php
 require_once dirname(__FILE__, 3) . '/components/Header.php';
 require_once dirname(__FILE__, 3) . '/features/AppList/getAppList.php';
+require_once dirname(__FILE__, 3) . '/features/AppList/getNewReview.php';
 $AppList = getAppList();
+$newReview = getNewReview();
 ?>
 
 <?php
@@ -245,7 +247,17 @@ if ($AppList == 0) {
                                         foreach ($AppList as $app) {
                                         ?>
                                             <div class="AppList_content">
-                                                <a href="AppDetail.php?appId=<?php echo $app['id'] ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>"></a>
+                                                <a href="AppDetail.php?appId=<?php echo $app['id'] ?>" class="<?php echo in_array($app['id'],$newReview) ? 'position-relative' : '' ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>">
+                                                <?php
+                                                if (in_array($app['id'],$newReview)) {
+                                                    ?>
+                                                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle AppList-badge">
+                                                        <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                    <?php
+                                                }
+                                                ?>
+                                                </a>
                                             </div>
                                             <?php
                                             if ($cnt1 % 4 == 0) {

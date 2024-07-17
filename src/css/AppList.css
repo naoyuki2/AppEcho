@@ -84,6 +84,11 @@
     height: 89.5vh;
 }
 
+.AppList-badge {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
 .AppList_random_wrap {
     position: relative;
     width: 4rem;
