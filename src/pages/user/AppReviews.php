@@ -76,7 +76,15 @@ $users = getUser();
         </form>
     </div>
 </div>
-
+<?php
+    if(empty($Reviews)){
+        ?>
+        <div class="AppReviews-no">
+            <h3>まだレビューはありません</h3>
+        </div>
+        <?php
+    }
+?>
 <?php foreach ($Reviews as $review) { ?>
     <div class="AppReviews-box">
         <form action="AppReviews.php" method="GET">
