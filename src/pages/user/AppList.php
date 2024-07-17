@@ -230,11 +230,19 @@ if ($AppList == 0) {
                             <div class="mainslide">
                                 <div class="subslide">
                                     <div class="AppList_wrap">
-                                        <div class="AppList_content">
-                                            <a href="AppRandomView.php"><img class="AppList_img" src="" alt="ランダム"></a>
-                                        </div>
+                                        <?php
+                                        if ($params == -1 || (isset($params['app']) && $params['app'] == -1)) {
+                                        ?>
+                                            <div class="AppList_content">
+                                                <a onclick="transition()" class="AppList_random_wrap"><i class="fas fa-question AppList_random"></i></a>
+                                            </div>
                                         <?php
                                         $cnt1 = 2;
+                                        } else {
+                                            $cnt1 = 1;
+                                        }
+                                        ?>
+                                        <?php
                                         $cnt2 = 1;
                                         foreach ($AppList as $app) {
                                         ?>
@@ -283,6 +291,9 @@ if ($AppList == 0) {
                 </div>
             </div>
             </form>
+
+            <div id="AppList-loading"></div>
+            <div id="AppList-animation"></div>
         <?php
     }
         ?>

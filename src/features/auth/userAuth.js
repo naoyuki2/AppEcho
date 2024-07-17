@@ -1,7 +1,7 @@
 // 新規登録・ユーザーネーム
 const signUpName = document.getElementById("Auth-signUp-name");
 
-signUpName.addEventListener('input', function() {   // 文字が入力されるたびに判定
+signUpName.addEventListener('input', function () {   // 文字が入力されるたびに判定
     let input = this.value;
 
     if (input.length > 20) {
@@ -15,7 +15,7 @@ signUpName.addEventListener('input', function() {   // 文字が入力される�
 const signUpMail = document.getElementById("Auth-signUp-mail");
 const signUpMailError = document.getElementById("Auth-signUp-mailError");
 
-signUpMail.addEventListener('blur', function() {    // 入力部分からフォーカスが外れたら判定
+signUpMail.addEventListener('blur', function () {    // 入力部分からフォーカスが外れたら判定
     const mail = this.value;
 
     // メールアドレスの形式チェック用正規表現
@@ -32,7 +32,7 @@ signUpMail.addEventListener('blur', function() {    // 入力部分からフォ�
 const signUpPassword = document.getElementById("Auth-signUp-password");
 const signUpPasswordError = document.getElementById("Auth-signUp-passwordError");
 
-signUpPassword.addEventListener('blur', function() {
+signUpPassword.addEventListener('blur', function () {
     const password = this.value;
 
     // パスワードの形式チェック用正規表現（半角英数のみ許可）
@@ -67,15 +67,35 @@ function signUpSend() {
     }
 
     if (inputFlg) {
-        alert("未入力の項目があります");
+        Swal.fire({
+            icon: "warning",
+            text: "未入力の項目があります！",
+        });
     } else if (errorFlg) {
-        alert("不正な項目があります");
+        Swal.fire({
+            icon: "warning",
+            text: "不正な項目があります！",
+        });
     } else {
-        flg = confirm("現在の内容で登録します。\nよろしいですか？");
-    }
-
-    if (flg) {
-        form.submit();
+        Swal.fire({
+            text: "現在の内容で登録します。よろしいですか？",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire({
+                    icon: 'success',
+                    text: '登録しました！'
+                }).then((result) => {
+                    if (result.value) {
+                        form.submit();
+                    }
+                });
+            }
+        });
     }
 }
 
@@ -105,7 +125,10 @@ function loginSend() {
     }
 
     if (inputFlg) {
-        alert("未入力の項目があります");
+        Swal.fire({
+            icon: "warning",
+            text: "未入力の項目があります！",
+        });
     } else {
         form.submit();
     }

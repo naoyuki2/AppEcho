@@ -51,15 +51,35 @@ function EditProfile() {
     }
 
     if (inputFlg) {
-        alert("未入力の項目があります");
+        Swal.fire({
+            icon: "warning",
+            text: "未入力の項目があります！",
+        });
     } else if (errorFlg) {
-        alert("不正な項目があります");
+        Swal.fire({
+            icon: "warning",
+            text: "不正な項目があります！",
+        });
     } else {
-        flg = confirm("現在の内容で更新します。\nよろしいですか？");
-    }
-
-    if (flg) {
-        form.submit();
+        Swal.fire({
+            text: "現在の内容で登録します。よろしいですか？",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire({
+                    icon: 'success',
+                    text: '登録しました！'
+                }).then((result) => {
+                    if (result.value) {
+                        form.submit();
+                    }
+                });
+            }
+        });
     }
 }
 

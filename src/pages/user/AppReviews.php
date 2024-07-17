@@ -25,9 +25,16 @@ if (isset($tagId) && isset($star)) {
 $GetTags = getTag();
 $users = getUser();
 ?>
-
+<?php
+    if(!isset($appId)){
+        header('Location: AppList.php');  
+        exit;
+    }
+?>
 <div class="AppReviews-fi">
     <div class="AppReviews-input">
+    <form action="../../features/AppReviews/Reviewsfilter.php" method="post">
+        <input type="hidden" name="appId" value="<?php echo $appId ?>">
         <div class="AppReviews-category">
             <!-- タグフィルタ -->
             <?php
@@ -35,7 +42,8 @@ $users = getUser();
                 foreach ($tagname as $tag) {
             ?>
                     <div class="AppReviews-fl-left">
-                        <button class="AppReviews-btn">
+                        <input type="hidden" name="tagId[]" value="<?php echo $tag['id'] ?>">
+                        <button type="submit" class="AppReviews-btn" name="tagdel" value="<?php echo $tag['id'] ?>">
                             <?php echo $tag['name'] ?>
                         </button>
                     </div>
@@ -48,7 +56,8 @@ $users = getUser();
                 foreach ($star as $stars) {
             ?>
                     <div class="AppReviews-fl-left">
-                        <button class="AppReviews-btn">
+                        <input type="hidden" name="star[]" value="<?php echo $stars ?>">
+                        <button type="submit" class="AppReviews-btn" name="stardel" value="<?php echo $stars ?>">
                             <i class="fa-regular fa-star" style="color: #4b4b4b"></i>
                             <?php echo $stars ?>
                         </button>
@@ -63,13 +72,24 @@ $users = getUser();
                 </div>
             </div>
             <div class="AppReviews-fl-right">
+                <?php if(isset($star) || isset($tagId)){ ?>
                 <a class="AppReviews-btn-reset" href="AppReviews.php?appId=<?php echo $appId ?>">絞り込み解除</a>
+                <?php }?>
             </div>
             <div class="AppReviews-fl-clear"></div>
         </div>
+        </form>
     </div>
 </div>
-
+<?php
+    if(empty($Reviews)){
+        ?>
+        <div class="AppReviews-no">
+            <h3>まだレビューはありません</h3>
+        </div>
+        <?php
+    }
+?>
 <?php foreach ($Reviews as $review) { ?>
     <div class="AppReviews-box">
         <form action="AppReviews.php" method="GET">

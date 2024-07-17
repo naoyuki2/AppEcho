@@ -5,15 +5,37 @@ function getProfile($id)
 {
     global $pdo;
     $sql = $pdo->prepare('
-            SELECT user.name, user.email, user.icon_image_url, user.isAnonymous, COUNT(review.id) AS review, COUNT(request.id) AS request
+            SELECT name, email, icon_image_url, isAnonymous
             FROM user
-            LEFT JOIN review
-            ON user.id = review.user_id
-            LEFT JOIN request
-            ON user.id = request.user_id
             WHERE user.id = ?
         ');
 
     $sql->execute([$id]);
     return $sql->fetchAll();
+}
+
+function getReview($id)
+{
+    global $pdo;
+    $sql = $pdo->prepare('
+            SELECT COUNT(id) AS review
+            FROM review
+            WHERE user_id = ?
+        ');
+
+    $sql->execute([$id]);
+    return $sql->fetch();
+}
+
+function getRequest($id)
+{
+    global $pdo;
+    $sql = $pdo->prepare('
+            SELECT COUNT(id) AS request
+            FROM request
+            WHERE user_id = ?
+        ');
+
+    $sql->execute([$id]);
+    return $sql->fetch();
 }

@@ -42,3 +42,17 @@ const swiper = new Swiper('.swiper-main', {
         clickable: true,
     }
 });
+
+function transition() {
+    const link = "./AppRandomView.php";
+    const animation_id = document.getElementById("AppList-animation");
+    const loading_id = document.getElementById("AppList-loading");
+
+    animation_id.classList.add("AppList-animation-bg");
+    setTimeout(function () {
+        loading_id.classList.add("AppList-loader");
+    }, 500);
+    setTimeout(function () {
+        location.href = link;
+    }, 2000);
+}
