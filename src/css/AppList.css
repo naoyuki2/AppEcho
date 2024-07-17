@@ -36,7 +36,11 @@
     color: #4b4b4b;
     border-color: #4b4b4b;
     background-color: #fafafa;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
 }
 
 
@@ -44,7 +48,14 @@
     color: #e37141;
     border-color: #e37141;
     background-color: #fafafa;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    text-decoration: none;
 }
 
 .AppList-fl-left {
