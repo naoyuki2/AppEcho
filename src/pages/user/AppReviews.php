@@ -25,7 +25,12 @@ if (isset($tagId) && isset($star)) {
 $GetTags = getTag();
 $users = getUser();
 ?>
-
+<?php
+    if(!isset($appId)){
+        header('Location: AppList.php');  
+        exit;
+    }
+?>
 <div class="AppReviews-fi">
     <div class="AppReviews-input">
     <form action="../../features/AppReviews/Reviewsfilter.php" method="post">

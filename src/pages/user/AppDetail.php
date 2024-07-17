@@ -12,6 +12,13 @@ $loginClass = "";
 } ?>
 
 <?php
+    if(!isset($appId)){
+        header('Location: AppList.php');  
+        exit;
+    }
+?>
+
+<?php
 foreach ($AppDetail as $detail) {
 ?>
     <div class="AppDetail-main">
