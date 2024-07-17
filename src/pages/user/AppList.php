@@ -229,7 +229,7 @@ if ($AppList == 0) {
                                 <div class="subslide">
                                     <div class="AppList_wrap">
                                         <div class="AppList_content">
-                                            <a href="AppRandomView.php" class="AppList_random_wrap"><i class="fas fa-question AppList_random"></i></a>
+                                            <a onclick="transition()" class="AppList_random_wrap"><i class="fas fa-question AppList_random"></i></a>
                                         </div>
                                         <?php
                                         $cnt1 = 2;
@@ -271,6 +271,9 @@ if ($AppList == 0) {
                 </div>
             </div>
             </form>
+
+            <div id="AppList-loading"></div>
+            <div id="AppList-animation"></div>
         <?php
     }
         ?>
