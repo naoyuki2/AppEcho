@@ -40,14 +40,14 @@
 }
 
 
-.AppList-btn-reset{
+.AppList-btn-reset {
     color: #e37141;
     border-color: #e37141;
     background-color: #fafafa;
     border-radius: 20px;
 }
 
-.AppList-fl-left{
+.AppList-fl-left {
     float: left;
     padding-left: 4px;
     padding-right: 4px;
@@ -55,12 +55,12 @@
     margin-bottom: 4px;
 }
 
-.AppList-fl-right{
+.AppList-fl-right {
     float: right;
     padding-right: 4px;
 }
 
-.AppList-fl-clear{
+.AppList-fl-clear {
     clear: both;
 }
 
@@ -77,7 +77,6 @@
     position: relative;
     width: 4rem;
     height: 4rem;
-    border: 1px solid #4b4b4b;
     background-color: #4b4b4b;
     border-radius: 10px;
     text-decoration: none;
@@ -91,4 +90,65 @@
     height: fit-content;
     margin: auto;
     color: #fafafa;
+}
+
+.AppList-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    --c: linear-gradient(#fafafa 0 0);
+    --r1: radial-gradient(farthest-side at bottom, #fafafa 93%, #0000);
+    --r2: radial-gradient(farthest-side at top, #fafafa 93%, #0000);
+    background:
+        var(--c), var(--r1), var(--r2),
+        var(--c), var(--r1), var(--r2),
+        var(--c), var(--r1), var(--r2);
+    background-repeat: no-repeat;
+    animation: l1 .8s infinite alternate;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 15;
+}
+
+@keyframes l1 {
+
+    0%,
+    10% {
+        background-size: 8px 0, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(50% - 2px), 0 calc(50% + 2px), 50% 50%, 50% calc(50% - 2px), 50% calc(50% + 2px), 100% 50%, 100% calc(50% - 2px), 100% calc(50% + 2px);
+    }
+
+    90%,
+    100% {
+        background-size: 8px 100%, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 -2px, 0 calc(100% + 2px), 50% 50%, 50% -2px, 50% calc(100% + 2px), 100% 50%, 100% -2px, 100% calc(100% + 2px);
+    }
+}
+
+.AppList-animation-bg {
+    background: #3ea632;
+    display: block;
+    content: "";
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: PageAnime-btt;
+}
+
+@keyframes PageAnime-btt {
+    0% {
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
 }
