@@ -11,7 +11,7 @@ $date = new DateTime();
 $request_date = $date->format("Y-m-d");
 
 Request($userid,$appname,$request_date);
-header('Location: ../../pages/user/AppRequestStatus.php');
+header('Location: ../../pages/user/RequestStatus.php');
 }
 
 function Request($userid,$appname,$request_date){
