@@ -33,10 +33,10 @@ $color;
         </span>
         <!-- アプリ名 -->
         <span class="AppRequestStatus-appname"><?php echo $Request['app_name'] ?></span>
-        <!-- 受理/破棄日 -->
-        <span class="AppRequestStatus-judge_date"><?php echo $isJudge ? $Request['judge_date'] : '申請中です。' ?></span>
         <!-- 申請日 -->
         <span class="AppRequestStatus-request_date"><?php echo $Request['request_date'] ?></span>
+        <!-- 受理/破棄日 -->
+        <span class="AppRequestStatus-judge_date"><?php echo $isJudge ? $Request['judge_date'] : '申請中です。' ?></span>
     </div>
     <?php } ?>
 
