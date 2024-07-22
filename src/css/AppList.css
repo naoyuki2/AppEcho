@@ -168,3 +168,8 @@
         transform: scaleY(1);
     }
 }
+
+.AppList-pagination-button {
+    position: sticky;
+    top: 39.5rem !important;
+}

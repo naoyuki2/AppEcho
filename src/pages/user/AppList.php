@@ -218,12 +218,13 @@ if ($AppList == 0) {
                     <?php
                 }
                     ?>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="flow01 l-section">
             <div class="l-inner">
-                <div class="swiper-pagination swiper-pagination-main"></div>
+                <div class="swiper-pagination swiper-pagination-main AppList-pagination-button"></div>
                 <div class="swiper swiper-main">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -231,32 +232,31 @@ if ($AppList == 0) {
                                 <div class="subslide">
                                     <div class="AppList_wrap">
                                         <?php
+                                        $lastEl = end($AppList);
                                         if ($params == -1 || (isset($params['app']) && $params['app'] == -1)) {
                                         ?>
                                             <div class="AppList_content">
                                                 <a onclick="transition()" class="AppList_random_wrap"><i class="fas fa-question AppList_random"></i></a>
                                             </div>
                                         <?php
-                                        $cnt1 = 2;
+                                            $cnt1 = 2;
                                         } else {
                                             $cnt1 = 1;
                                         }
-                                        ?>
-                                        <?php
                                         $cnt2 = 1;
                                         foreach ($AppList as $app) {
                                         ?>
                                             <div class="AppList_content">
-                                                <a href="AppDetail.php?appId=<?php echo $app['id'] ?>" class="<?php echo in_array($app['id'],$newReview) ? 'position-relative' : '' ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>">
-                                                <?php
-                                                if (in_array($app['id'],$newReview)) {
-                                                    ?>
-                                                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle AppList-badge">
-                                                        <span class="visually-hidden">New alerts</span>
-                                                    </span>
+                                                <a href="AppDetail.php?appId=<?php echo $app['id'] ?>" class="<?php echo in_array($app['id'], $newReview) ? 'position-relative' : '' ?>"><img class="AppList_img" src="<?php echo $app['image_url'] ?>" alt="<?php echo $app['name'] ?>">
                                                     <?php
-                                                }
-                                                ?>
+                                                    if (in_array($app['id'], $newReview)) {
+                                                    ?>
+                                                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle AppList-badge">
+                                                            <span class="visually-hidden">New alerts</span>
+                                                        </span>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </a>
                                             </div>
                                             <?php
@@ -267,7 +267,7 @@ if ($AppList == 0) {
                                     <?php
                                                 $cnt2++;
                                             }
-                                            if ($cnt2 % 6 == 0) {
+                                            if ($cnt2 % 6 == 0 && $app != $lastEl) {
                                     ?>
                                     </div>
                                 </div>
@@ -290,17 +290,17 @@ if ($AppList == 0) {
                     </div>
                 </div>
             </div>
-            </form>
-
-            <div id="AppList-loading"></div>
-            <div id="AppList-animation"></div>
-        <?php
-    }
-        ?>
-
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="../../features/AppList/AppList.js"></script>
-        <?php
-        require_once dirname(__FILE__, 3) . '/components/Footer.php';
-        ?>
+
+        <div id="AppList-loading"></div>
+        <div id="AppList-animation"></div>
+    <?php
+}
+    ?>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../../features/AppList/AppList.js"></script>
+    <?php
+    require_once dirname(__FILE__, 3) . '/components/Footer.php';
+    ?>
