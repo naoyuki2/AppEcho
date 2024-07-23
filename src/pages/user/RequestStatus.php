@@ -12,7 +12,15 @@ $color;
         <span class="AppRequestStatus-title-judgedate">受理/破棄日</span>
         <span class="AppRequestStatus-title-reqdate">申請日</span>
     </div>
-
+    <?php
+    if(empty($request)){
+        ?>
+        <div class="AppRequestStatus-no">
+            <h3>まだ申請はありません</h3>
+        </div>
+        <?php
+    }
+    ?>
     <?php foreach($request as $Request) { 
         $isJudge = isset($Request['judge_date']);
     ?>
