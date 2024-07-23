@@ -8,18 +8,22 @@
     padding: .5rem .8rem;
 }
 
+.AppRequestStatus-title-status {
+    margin-left: .2rem;
+}
+
 .AppRequestStatus-title-appname{
-    margin-left: 1.6rem;
+    margin-left: 2rem;
 }
 
 .AppRequestStatus-title-judgedate{
     float: right;
-    margin-right: 1.3rem;
+    margin-right: 2rem;
 }
 
 .AppRequestStatus-title-reqdate{
     float: right;
-    margin-right: 3rem;
+    margin-right: 3.5rem;
 }
 
 .AppRequestStatus{
