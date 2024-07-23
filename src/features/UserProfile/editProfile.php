@@ -42,6 +42,7 @@ if (isset($userIconPass)) {
         WHERE id = ?
     ');
     $update->execute([$userName, $email, $userIconPass, $isAnonymous, $userId]);
+    $_SESSION['user']['image_url'] = $userIconPass;
 } else {
     $update = $pdo->prepare('
         UPDATE user SET name = ?, email = ?, isAnonymous = ?
