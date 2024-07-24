@@ -52,7 +52,7 @@ foreach ($profiles as $profile) {
                     </div>
                     <div class="EditProfile-isAnonymous-wrap">
                         <div class="form-check form-switch">
-                            <input class="EditProfile-isAnonymous form-check-input" name="isAnonymous" type="checkbox" role="switch" id="flexSwitchCheckDefault" <?php if ($profile['isAnonymous'] == 1) echo "checked" ?>>
+                            <input class="EditProfile-isAnonymous form-check-input" name="isAnonymous" type="checkbox" role="switch" id="flexSwitchCheckDefault" <?php if ($profile['isAnonymous'] == 1) echo "checked" ?> value="<?php echo $profile['isAnonymous'] ?>">
                             <label class="form-check-label" for="flexSwitchCheckDefault" id="EditProfile-isAnonymous-label">
                                 <?php echo $profile['isAnonymous'] == 1 ? "ON" : "OFF" ?>
                             </label>
