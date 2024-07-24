@@ -5,11 +5,7 @@ require_once dirname(__FILE__, 4) . '/config/db_connect.php';
 $userId = $_SESSION['user']['id'];
 $userName = $_POST['userName'];
 $email = $_POST['email'];
-if (isset($_POST['isAnonymous'])) {
-    $isAnonymous = $_POST['isAnonymous'];
-} else {
-    $isAnonymous = 0;
-}
+$isAnonymous = $_POST['isAnonymous'];
 
 global $pdo;
 $select = $pdo->prepare('
